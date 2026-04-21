@@ -1,16 +1,31 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovementController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+   // Variables
+   [SerializeField] float playerSpeed = 5.0f;
+   Rigidbody rb;
+   Vector2 playerMovement;
+
+   void Awake()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        MovePlayer();
+    }
+
+    void OnMove(InputValue value)
+    {
+        playerMovement = value.Get<Vector2>();
+    }
+
+    void MovePlayer()
+    {
+        Vector3 movement = new Vector3(playerMovement.x * playerSpeed, rb.linearVelocity.y, playerMovement.y * playerSpeed);
+        rb.linearVelocity = movement;
     }
 }
