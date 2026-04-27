@@ -59,7 +59,10 @@ public class PlayerMovementController : MonoBehaviour
 
          Vector3 movement = new Vector3(playerMovement.x * playerSpeed, rb.linearVelocity.y, playerMovement.y * playerSpeed);
         rb.linearVelocity = movement;
-        anim.SetFloat("MoveX", playerMovement.x);
-        anim.SetFloat("MoveY", playerMovement.y);
+
+        Vector3 localmove = transform.InverseTransformDirection(movement);
+
+        anim.SetFloat("MoveX", localmove.x);
+        anim.SetFloat("MoveY", localmove.z);
     }
 }
