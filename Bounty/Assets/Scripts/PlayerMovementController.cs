@@ -10,18 +10,19 @@ public class PlayerMovementController : MonoBehaviour
     Rigidbody rb;
     Vector3 playerMovement, rotationTarget;
     Vector2 mouseLook;
+    Animator anim;
 
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
         MousePosition();
         RotatePlayer();
-        MovePlayer();
     }
 
     void OnMove(InputValue value)
@@ -34,17 +35,12 @@ public class PlayerMovementController : MonoBehaviour
         mouseLook = value.Get<Vector2>();
     }
 
-    void MovePlayer()
-    {
-        Vector3 movement = new Vector3(playerMovement.x * playerSpeed, rb.linearVelocity.y, playerMovement.y * playerSpeed);
-        rb.linearVelocity = movement;
-    }
 
     void MousePosition()
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(mouseLook);
-        if (Physics.Raycast(ray , out hit))
+        if (Physics.Raycast(ray, out hit))
         {
             rotationTarget = hit.point;
         }
@@ -58,7 +54,12 @@ public class PlayerMovementController : MonoBehaviour
         Vector3 aimDirection = new Vector3(rotationTarget.x, 0f, rotationTarget.z);
         if (aimDirection != Vector3.zero)
         {
-             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed);
         }
+
+         Vector3 movement = new Vector3(playerMovement.x * playerSpeed, rb.linearVelocity.y, playerMovement.y * playerSpeed);
+        rb.linearVelocity = movement;
+        anim.SetFloat("MoveX", playerMovement.x);
+        anim.SetFloat("MoveY", playerMovement.y);
     }
 }
