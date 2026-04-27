@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!319 &101100000
+--- !u!319 &31900000
 AvatarMask:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RightHandMask
-  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Name: UpperBodyMask
+  m_Mask: 00000000010000000100000000000000000000000100000001000000010000000100000000000000000000000100000001000000
   m_Elements:
   - m_Path: 
     m_Weight: 1
@@ -36,11 +36,11 @@ AvatarMask:
   - m_Path: RigAss/RigSpine1/RigSpine2/RigSpine3/RigArmLeftCollarbone
     m_Weight: 1
   - m_Path: RigAss/RigSpine1/RigSpine2/RigSpine3/RigArmLeftCollarbone/RigArmLeft1
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: RigAss/RigSpine1/RigSpine2/RigSpine3/RigArmLeftCollarbone/RigArmLeft1/RigArmLeft2
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: RigAss/RigSpine1/RigSpine2/RigSpine3/RigArmLeftCollarbone/RigArmLeft1/RigArmLeft2/RigArmLeft3
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: RigAss/RigSpine1/RigSpine2/RigSpine3/RigArmLeftCollarbone/RigArmLeft1/RigArmLeft2/RigArmLeft3/RigArmLeftFing11
     m_Weight: 0
   - m_Path: RigAss/RigSpine1/RigSpine2/RigSpine3/RigArmLeftCollarbone/RigArmLeft1/RigArmLeft2/RigArmLeft3/RigArmLeftFing11/RigArmLeftFing12
@@ -104,6 +104,6 @@ AvatarMask:
   - m_Path: RigAss/RigSpine1/RigSpine2/RigSpine3/RigNeck
     m_Weight: 1
   - m_Path: RigAss/RigSpine1/RigSpine2/RigSpine3/RigNeck/RigHead
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: Soldier
     m_Weight: 0
