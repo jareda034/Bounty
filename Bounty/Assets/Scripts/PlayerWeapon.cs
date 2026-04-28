@@ -7,7 +7,11 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] GameObject rifle;
     [SerializeField] GameObject bullet;
     [SerializeField] Transform BulletPoint;
+    [SerializeField] int playerAmmo;
+    int rilfeAmmo = 30;
     bool hasRifle;
+    public bool isReloading;
+    
     Animator anim;
     PlayerMovementController playerMovement;
 
@@ -23,6 +27,7 @@ public class PlayerWeapon : MonoBehaviour
         if (rifle == true)
         {
             hasRifle = true;
+            playerAmmo = rilfeAmmo;
         }
     }
 
@@ -45,12 +50,26 @@ public class PlayerWeapon : MonoBehaviour
 
     void OnShoot(InputValue value)
     {
-        if (playerMovement.isMoving) { return; }
+        if (playerMovement.isMoving || isReloading) { return; }
         if (value.isPressed)
         {
             ShootWeapon();
             anim.SetTrigger("shooting");
+            playerAmmo--;
+            if(playerAmmo == 0)
+            {
+                anim.SetBool("isReloading", true);
+                isReloading = true;
+                Invoke(nameof(ResetReload), 2f);
+            }
         }
+    }
+
+    void ResetReload()
+    {
+        isReloading = false;
+        playerAmmo = rilfeAmmo;
+        anim.SetBool("isReloading", false);
     }
 
     void ShootWeapon()

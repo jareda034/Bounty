@@ -12,12 +12,14 @@ public class PlayerMovementController : MonoBehaviour
     Vector3 playerMovement, rotationTarget;
     Vector2 mouseLook;
     Animator anim;
+    PlayerWeapon weapon;
 
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        weapon = GetComponent<PlayerWeapon>();
     }
 
     void FixedUpdate()
@@ -29,6 +31,7 @@ public class PlayerMovementController : MonoBehaviour
 
     void OnMove(InputValue value)
     {
+        if(weapon.isReloading){ return; }
         playerMovement = value.Get<Vector2>();
     }
 
