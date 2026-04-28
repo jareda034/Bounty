@@ -38,6 +38,7 @@ public class PlayerWeapon : MonoBehaviour
     void Update()
     {
         CheckIfWeapon();
+        CanShoot();
     }
 
     void CheckIfWeapon()
@@ -53,21 +54,31 @@ public class PlayerWeapon : MonoBehaviour
     }
 
     void OnShoot(InputValue value)
+    { 
+       isFiring = value.isPressed;
+    }
+
+    void CanShoot()
     {
         if (playerMovement.isMoving || isReloading || !canShoot) { return; }
-        if (value.isPressed)
+        if (isFiring && playerAmmo > 0)
         {
-            canShoot = false;
-            ShootWeapon();
-            anim.SetTrigger("shooting");
-            playerAmmo--;
-            Invoke(nameof(ResetShoot), rifleFireRate);
-            if (playerAmmo == 0)
-            {
-                anim.SetBool("isReloading", true);
-                isReloading = true;
-                Invoke(nameof(ResetReload), 0.5f);
-            }
+            HandleShoot();
+        }
+    }
+
+    void HandleShoot()
+    {
+        canShoot = false;
+        ShootWeapon();
+        anim.SetTrigger("shooting");
+        playerAmmo--;
+        Invoke(nameof(ResetShoot), rifleFireRate);
+        if (playerAmmo == 0)
+        {
+            anim.SetBool("isReloading", true);
+            isReloading = true;
+            Invoke(nameof(ResetReload), 2f);
         }
     }
 
