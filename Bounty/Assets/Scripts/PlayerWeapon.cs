@@ -1,9 +1,12 @@
 using System.ComponentModel.Design;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerWeapon : MonoBehaviour
 {
    [SerializeField] GameObject rifle;
+   [SerializeField] GameObject bullet;
+   [SerializeField] Transform BulletPoint;
    bool hasRifle;
    Animator anim;
    PlayerMovementController playerMovement;
@@ -38,5 +41,19 @@ public class PlayerWeapon : MonoBehaviour
         {
             anim.SetBool("HasRifle", false);
         }
+    }
+
+    void OnShoot(InputValue value)
+    {
+        if (value.isPressed)
+        {
+          ShootWeapon(); 
+          Debug.Log("Bang");
+        }
+    }
+
+    void ShootWeapon()
+    {
+       Instantiate(bullet,BulletPoint);
     }
 }
