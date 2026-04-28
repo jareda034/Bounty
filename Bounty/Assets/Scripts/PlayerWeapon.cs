@@ -45,15 +45,17 @@ public class PlayerWeapon : MonoBehaviour
 
     void OnShoot(InputValue value)
     {
+        if (playerMovement.isMoving){ return; }
         if (value.isPressed)
         {
           ShootWeapon(); 
           Debug.Log("Bang");
+          anim.SetTrigger("shooting");
         }
     }
 
     void ShootWeapon()
     {
-       Instantiate(bullet,BulletPoint);
+       Instantiate(bullet, BulletPoint.position, BulletPoint.rotation);
     }
 }
