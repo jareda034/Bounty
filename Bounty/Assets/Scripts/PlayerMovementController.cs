@@ -7,6 +7,7 @@ public class PlayerMovementController : MonoBehaviour
     // Variables
     [SerializeField] float playerSpeed = 5.0f;
     [SerializeField] float rotationSpeed = 0.15f;
+    public bool isMoving;
     Rigidbody rb;
     Vector3 playerMovement, rotationTarget;
     Vector2 mouseLook;
@@ -23,11 +24,26 @@ public class PlayerMovementController : MonoBehaviour
     {
         MousePosition();
         RotatePlayer();
+        CheckMovement();
     }
 
     void OnMove(InputValue value)
     {
         playerMovement = value.Get<Vector2>();
+    }
+
+    void CheckMovement()
+    {
+        if (playerMovement.magnitude > 0.1f)
+        {
+            anim.SetBool("isMoving", true);
+            isMoving = true;
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
+            isMoving = false;
+        }
     }
 
     void OnLook(InputValue value)
@@ -52,12 +68,13 @@ public class PlayerMovementController : MonoBehaviour
         lookPos.y = 0f;
         var rotation = Quaternion.LookRotation(lookPos);
         Vector3 aimDirection = new Vector3(rotationTarget.x, 0f, rotationTarget.z);
+
         if (aimDirection != Vector3.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed);
         }
 
-         Vector3 movement = new Vector3(playerMovement.x * playerSpeed, rb.linearVelocity.y, playerMovement.y * playerSpeed);
+        Vector3 movement = new Vector3(playerMovement.x * playerSpeed, rb.linearVelocity.y, playerMovement.y * playerSpeed);
         rb.linearVelocity = movement;
 
         Vector3 localmove = transform.InverseTransformDirection(movement);
