@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5455000023290263224}
   - component: {fileID: 4408588570242396216}
   - component: {fileID: -1999631677101777284}
+  - component: {fileID: -4090357861322981923}
   m_Layer: 0
   m_Name: Enemy Bullet
   m_TagString: Untagged
@@ -123,7 +124,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5866248205663496214}
   serializedVersion: 5
-  m_Mass: 0.1
+  m_Mass: 0.01
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -140,5 +141,19 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 84
   m_CollisionDetection: 1
+--- !u!114 &-4090357861322981923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5866248205663496214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd93b3120424a504d8de220c0ad2275b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBulletController
+  damage: 5
+  bulletSpeed: 20

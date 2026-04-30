@@ -15,6 +15,7 @@ public class BulletController : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime, Space.Self);
+        Destroy(gameObject,4f);
     }
 
     void OnCollisionEnter(Collision other)

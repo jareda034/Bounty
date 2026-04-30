@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -91,7 +92,8 @@ public class RandomEnemyPatrol : MonoBehaviour
         Debug.Log("Player In Range");
         if (target != null)
         {
-            transform.LookAt(target);
+            Vector3 targetCenter = new Vector3(target.position.x, target.position.y + 0.5f, target.position.z);
+            transform.LookAt(targetCenter);
         }
         if (!attackOnCoolDown)
         {

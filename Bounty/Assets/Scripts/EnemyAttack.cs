@@ -6,9 +6,6 @@ public class EnemyAttack : MonoBehaviour
   [SerializeField] GameObject Bullet;
   [SerializeField] Transform firePoint;
   Animator anim;
-  [Header("Attack Settings")]
-  [SerializeField] float damage = 5f;
-  [SerializeField] float forwardShotForce = 10f;
 
    void Awake()
     {
@@ -17,11 +14,8 @@ public class EnemyAttack : MonoBehaviour
 
   public void FireBullet()
     {
-        anim.SetBool("isShooting", true);
         anim.SetBool("isLooking", false);
-        Rigidbody bulletRb = Instantiate(Bullet,firePoint.position, Quaternion.identity).GetComponent<Rigidbody>();
-        bulletRb.AddForce(transform.forward * forwardShotForce, ForceMode.Impulse);
+        Rigidbody bulletRb = Instantiate(Bullet, firePoint.position, firePoint.rotation).GetComponent<Rigidbody>();
 
-       // Destroy(gameObject, 4f);
     }
 }

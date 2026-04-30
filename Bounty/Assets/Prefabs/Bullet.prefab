@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43010df8c2d53344487ddc6ad1a62a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletController
-  bulletSpeed: 15
+  bulletSpeed: 20
   bulletDamage: 2.5
 --- !u!54 &-1999631677101777284
 Rigidbody:
