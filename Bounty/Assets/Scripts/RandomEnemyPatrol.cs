@@ -4,8 +4,20 @@ using UnityEngine.AI;
 public class RandomEnemyPatrol : MonoBehaviour
 {
     NavMeshAgent agent;
-    [SerializeField] float range;
+    [Header("Patrol Settings")]
+    [SerializeField] float patrolRange;
     [SerializeField] float waitTime = 2f;
+
+    bool playerIsSeen;
+    bool playerInAttackRange;
+    [SerializeField] private Transform target;
+
+    [Header("LayerMask Settings")]
+    [SerializeField] private LayerMask playerLayer;
+
+    [Header("Decetion Range")]
+    [SerializeField] float playerSeenRange = 20f;
+    [SerializeField] float playerAttackRange = 15f;
 
     Vector3 centrePoint;
     Animator anim;
@@ -15,11 +27,62 @@ public class RandomEnemyPatrol : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         centrePoint = agent.transform.position;
+        GetTarget();
+    }
+
+    void GetTarget()
+    {
+        if (target == null)
+        {
+            GameObject player = GameObject.Find("Player");
+            if (player != null)
+            {
+                target = player.transform;
+            }
+        }
     }
 
     void Update()
     {
-        Patrol();
+       EnemyBehaviour();
+       DetectPlayer();
+    }
+
+    void EnemyBehaviour()
+    {
+        if (!playerIsSeen && !playerInAttackRange)
+        {
+            Patrol();
+        }
+        else if (playerIsSeen && !playerInAttackRange)
+        {
+            ChaseTarget();
+        }
+        else if (playerIsSeen && playerInAttackRange)
+        {
+            FireWeapon();
+        }
+    }
+
+    void ChaseTarget()
+    {
+        if (target != null)
+        {
+            agent.SetDestination(target.transform.position);
+            Debug.Log("Player Seen");
+        }
+        
+    }
+
+    void FireWeapon()
+    {
+        
+    }
+
+    void DetectPlayer()
+    {
+        playerIsSeen = Physics.CheckSphere(transform.position, playerSeenRange, playerLayer);
+        playerInAttackRange = Physics.CheckSphere(transform.position, playerAttackRange, playerLayer);
     }
 
     void Patrol()
@@ -29,7 +92,7 @@ public class RandomEnemyPatrol : MonoBehaviour
             waitTime -= Time.deltaTime;
             anim.SetBool("isLooking", true);
             Vector3 point;
-            if (RandomPoint(centrePoint, range, out point))
+            if (RandomPoint(centrePoint, patrolRange, out point))
             {
                 if (waitTime <= 0)
                 {
