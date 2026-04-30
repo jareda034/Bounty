@@ -5,13 +5,16 @@ public class RandomEnemyPatrol : MonoBehaviour
 {
     NavMeshAgent agent;
     [SerializeField] float range;
+    [SerializeField] float waitTime = 2f;
 
     Vector3 centrePoint;
+    Animator anim;
 
     void Awake()
     {
-       agent = GetComponent<NavMeshAgent>(); 
-       centrePoint = agent.transform.position;
+        agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
+        centrePoint = agent.transform.position;
     }
 
     void Update()
@@ -23,10 +26,17 @@ public class RandomEnemyPatrol : MonoBehaviour
     {
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
+            waitTime -= Time.deltaTime;
+            anim.SetBool("isLooking", true);
             Vector3 point;
             if (RandomPoint(centrePoint, range, out point))
             {
-               agent.SetDestination(point);
+                if (waitTime <= 0)
+                {
+                    agent.SetDestination(point);
+                    anim.SetBool("isLooking", false);
+                    waitTime = 2f;
+                }
             }
         }
     }
