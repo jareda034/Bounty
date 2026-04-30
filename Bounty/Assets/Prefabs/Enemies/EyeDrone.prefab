@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb6daf8fed5a7a045ab0e921ac27ea28, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.428
+      value: 0.243
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb6daf8fed5a7a045ab0e921ac27ea28, type: 3}
       propertyPath: m_LocalPosition.z
@@ -138,6 +138,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fb6daf8fed5a7a045ab0e921ac27ea28, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579430835646224162, guid: fb6daf8fed5a7a045ab0e921ac27ea28, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.106
       objectReference: {fileID: 0}
     - target: {fileID: 4005149463925777631, guid: fb6daf8fed5a7a045ab0e921ac27ea28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -236,8 +240,8 @@ Rigidbody:
   m_GameObject: {fileID: 4625809525705492320}
   serializedVersion: 5
   m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_LinearDamping: 10
+  m_AngularDamping: 10
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -252,7 +256,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &4921863215824727131
 MonoBehaviour:
@@ -268,8 +272,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
   Bullet: {fileID: 5866248205663496214, guid: ee19a22624e5217478d39a0d4edcfb39, type: 3}
   firePoint: {fileID: 8324863767422531137}
-  damage: 5
-  bulletSpeed: 10
 --- !u!195 &3605278643356877828
 NavMeshAgent:
   m_ObjectHideFlags: 0

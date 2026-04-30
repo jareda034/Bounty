@@ -1,0 +1,39 @@
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class PlayerHealth : MonoBehaviour
+{
+    [Header("Health Settings")]
+    [SerializeField] float playerHealth = 20f;
+    bool playerAlive = true;
+    [Header("Ref")]
+    Animator anim;
+
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+    public void DamagePlayer(float damage)
+    {
+        playerHealth -= damage;
+        anim.SetTrigger("damaged");
+        Debug.Log(playerHealth);
+        if (playerHealth <= 0)
+        {
+            Death();
+        }
+    }
+
+    void Death()
+    {
+        anim.SetTrigger("dead");
+        playerAlive = false;
+        Destroy(gameObject, 5f);
+    }
+
+    public bool GetPlayerAlive()
+    {
+        return playerAlive;
+    }
+} 

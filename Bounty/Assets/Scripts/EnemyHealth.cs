@@ -15,7 +15,6 @@ public class EnemyHealth : MonoBehaviour
     {
         enemyHealth -= damage;
         anim.SetTrigger("damaged");
-        Debug.Log(enemyHealth);
 
           if(enemyHealth <= 0)
         {

@@ -7,6 +7,7 @@ public class RandomEnemyPatrol : MonoBehaviour
 {
     [Header("Ref")]
     EnemyAttack enemyAttack;
+    PlayerHealth playerHealth;
     [SerializeField] private Transform target;
     Animator anim;
     NavMeshAgent agent;
@@ -35,6 +36,7 @@ public class RandomEnemyPatrol : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         enemyAttack = GetComponent<EnemyAttack>();
+        playerHealth = FindAnyObjectByType<PlayerHealth>();
         centrePoint = agent.transform.position;
         GetTarget();
     }
@@ -88,17 +90,20 @@ public class RandomEnemyPatrol : MonoBehaviour
 
     void FireWeapon()
     {
-        agent.SetDestination(transform.position);
-        Debug.Log("Player In Range");
-        if (target != null)
+        if (playerHealth.GetPlayerAlive() == true)
         {
-            Vector3 targetCenter = new Vector3(target.position.x, target.position.y + 0.5f, target.position.z);
-            transform.LookAt(targetCenter);
-        }
-        if (!attackOnCoolDown)
-        {
-           enemyAttack.FireBullet(); 
-           StartCoroutine(AttackCoolDown());
+            agent.SetDestination(transform.position);
+            Debug.Log("Player In Range");
+            if (target != null)
+            {
+                Vector3 targetCenter = new Vector3(target.position.x, target.position.y + 0.5f, target.position.z);
+                transform.LookAt(targetCenter);
+            }
+            if (!attackOnCoolDown)
+            {
+                enemyAttack.FireBullet();
+                StartCoroutine(AttackCoolDown());
+            }
         }
     }
 
