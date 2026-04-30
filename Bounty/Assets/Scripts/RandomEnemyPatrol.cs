@@ -1,16 +1,22 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class RandomEnemyPatrol : MonoBehaviour
 {
+    [Header("Ref")]
+    EnemyAttack enemyAttack;
+    [SerializeField] private Transform target;
+    Animator anim;
     NavMeshAgent agent;
+
     [Header("Patrol Settings")]
     [SerializeField] float patrolRange;
     [SerializeField] float waitTime = 2f;
+    Vector3 centrePoint;
 
     bool playerIsSeen;
     bool playerInAttackRange;
-    [SerializeField] private Transform target;
 
     [Header("LayerMask Settings")]
     [SerializeField] private LayerMask playerLayer;
@@ -19,13 +25,15 @@ public class RandomEnemyPatrol : MonoBehaviour
     [SerializeField] float playerSeenRange = 20f;
     [SerializeField] float playerAttackRange = 15f;
 
-    Vector3 centrePoint;
-    Animator anim;
+    [Header("Attack Cooldown Settings")]
+    [SerializeField] float attackRate = 1f;
+    bool attackOnCoolDown;
 
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
+        enemyAttack = GetComponent<EnemyAttack>();
         centrePoint = agent.transform.position;
         GetTarget();
     }
@@ -44,8 +52,8 @@ public class RandomEnemyPatrol : MonoBehaviour
 
     void Update()
     {
-       EnemyBehaviour();
-       DetectPlayer();
+        EnemyBehaviour();
+        DetectPlayer();
     }
 
     void EnemyBehaviour()
@@ -53,14 +61,17 @@ public class RandomEnemyPatrol : MonoBehaviour
         if (!playerIsSeen && !playerInAttackRange)
         {
             Patrol();
+            anim.SetBool("isMoving", true);
         }
         else if (playerIsSeen && !playerInAttackRange)
         {
             ChaseTarget();
+            anim.SetBool("isMoving", true);
         }
         else if (playerIsSeen && playerInAttackRange)
         {
             FireWeapon();
+            anim.SetBool("isMoving", false);
         }
     }
 
@@ -71,12 +82,30 @@ public class RandomEnemyPatrol : MonoBehaviour
             agent.SetDestination(target.transform.position);
             Debug.Log("Player Seen");
         }
-        
+
     }
 
     void FireWeapon()
     {
-        
+        agent.SetDestination(transform.position);
+        Debug.Log("Player In Range");
+        if (target != null)
+        {
+            transform.LookAt(target);
+        }
+        if (!attackOnCoolDown)
+        {
+           enemyAttack.FireBullet(); 
+           StartCoroutine(AttackCoolDown());
+        }
+    }
+
+    IEnumerator AttackCoolDown()
+    {
+        attackOnCoolDown = true;
+        anim.SetTrigger("isShooting");
+        yield return new WaitForSeconds(attackRate);
+        attackOnCoolDown = false;
     }
 
     void DetectPlayer()
