@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] float enemyHealth = 15f;
+    [SerializeField] float enemyHealth;
 
     public void DamageEnemy(float damage)
     {
