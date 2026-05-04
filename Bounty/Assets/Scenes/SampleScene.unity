@@ -1440,6 +1440,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2090933175267194024, guid: d324de115c4dff845bee7b7f166883c4, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d893f707bc253a84aa1e7d87361c830a, type: 2}
     - target: {fileID: 2647211758135124163, guid: d324de115c4dff845bee7b7f166883c4, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -4255,7 +4259,7 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 8
-  Clear: {fileID: 2100000, guid: 46ce02afb30f4904a82bc873915eecc8, type: 2}
+  Clear: {fileID: 2100000, guid: c9c6920dc48e87a4794a6403379cee06, type: 2}
   wallMat: {fileID: 2100000, guid: d893f707bc253a84aa1e7d87361c830a, type: 2}
   hideFadDuration: 0.5
 --- !u!4 &330846700 stripped
@@ -14943,6 +14947,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19820764, guid: be523d7c447344ad7a4b2ee1c2588fb3, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19820764, guid: be523d7c447344ad7a4b2ee1c2588fb3, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20971,6 +20983,10 @@ PrefabInstance:
     - target: {fileID: 371080633427926990, guid: 3d317712112a45e4498227ec54515671, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791353650209106427, guid: 3d317712112a45e4498227ec54515671, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

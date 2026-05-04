@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 92549
+  controlID: 96279
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 112}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 92550
+  controlID: 96280
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -779,9 +779,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -13.860518, y: -18.994991, z: -8.309708}
+    m_Target: {x: -2.1879902, y: -15.529798, z: 17.638367}
     speed: 2
-    m_Value: {x: -13.860518, y: -18.994991, z: -8.309708}
+    m_Value: {x: -2.1879902, y: -15.529798, z: 17.638367}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -827,13 +827,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.35990176, y: 0.5640604, z: -0.29788375, w: -0.68116224}
+    m_Target: {x: -0.2784198, y: 0.13496041, z: -0.039576136, w: -0.9503395}
     speed: 2
-    m_Value: {x: -0.35982797, y: 0.56394476, z: -0.29782268, w: -0.6810226}
+    m_Value: {x: -0.2783581, y: 0.1349305, z: -0.039567366, w: -0.9501289}
   m_Size:
-    m_Target: 25.21393
+    m_Target: 21.960928
     speed: 2
-    m_Value: 25.21393
+    m_Value: 21.960928
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2560,7 +2560,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 112}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 92614
+  controlID: 96351
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -2634,6 +2634,8 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
+      - m_Data: -184474
+      - m_Data: -145200
       - m_Data: -120124
       - m_Data: -109218
       - m_Data: -29692
@@ -2752,7 +2754,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SciFi Warehouse Kit/Art/Textures/Skybox
+    - Assets/SciFi Warehouse Kit/Art/Materials
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -2828,7 +2830,9 @@ MonoBehaviour:
     - m_Data: 48600
     - m_Data: 48602
     - m_Data: 48604
+    - m_Data: 48606
     - m_Data: 48608
+    - m_Data: 48610
     - m_Data: 48612
     - m_Data: 48614
     - m_Data: 48616
@@ -2852,7 +2856,9 @@ MonoBehaviour:
     - m_Data: 55518
     - m_Data: 55588
     - m_Data: 55610
+    - m_Data: 124212
     - m_Data: 124214
+    - m_Data: 124234
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2879,9 +2885,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 984}
     m_SelectedIDs:
-    - m_Data: 92428
+    - m_Data: 46848
     m_LastClickedID:
       m_Data: 0
     m_ExpandedIDs:
@@ -2940,7 +2946,9 @@ MonoBehaviour:
     - m_Data: 48600
     - m_Data: 48602
     - m_Data: 48604
+    - m_Data: 48606
     - m_Data: 48608
+    - m_Data: 48610
     - m_Data: 48612
     - m_Data: 48614
     - m_Data: 48616
@@ -2964,7 +2972,9 @@ MonoBehaviour:
     - m_Data: 55518
     - m_Data: 55588
     - m_Data: 55610
+    - m_Data: 124212
     - m_Data: 124214
+    - m_Data: 124234
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2992,8 +3002,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 92428
-    m_LastClickedInstanceID: 92428
+    - m_Data: 46848
+    m_LastClickedInstanceID: 46848
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
@@ -3095,7 +3105,7 @@ MonoBehaviour:
     m_CachedPref: 329
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 92428
+  m_LastInspectedObjectInstanceID: 46848
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

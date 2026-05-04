@@ -53,4 +53,6 @@ public class HideWalls : MonoBehaviour
             wallRenderer.material = mat;
         }
     }
+
+
 }
