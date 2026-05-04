@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 84142
+  controlID: 92549
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 112}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 84106
+  controlID: 92550
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -779,9 +779,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 15.195505, y: 5.0623507, z: 9.796734}
+    m_Target: {x: -13.860518, y: -18.994991, z: -8.309708}
     speed: 2
-    m_Value: {x: 15.195505, y: 5.0623507, z: 9.796734}
+    m_Value: {x: -13.860518, y: -18.994991, z: -8.309708}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -827,20 +827,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.12232857, y: 0.83629024, z: -0.20724976, w: -0.49302685}
+    m_Target: {x: -0.35990176, y: 0.5640604, z: -0.29788375, w: -0.68116224}
     speed: 2
-    m_Value: {x: -0.12230573, y: 0.8361341, z: -0.20721105, w: -0.49293476}
+    m_Value: {x: -0.35982797, y: 0.56394476, z: -0.29782268, w: -0.6810226}
   m_Size:
-    m_Target: 12.235744
+    m_Target: 25.21393
     speed: 2
-    m_Value: 12.235744
+    m_Value: 25.21393
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1.1243999
-    m_SpeedNormalized: 0.55999994
+    m_Speed: 1.0646999
+    m_SpeedNormalized: 0.53
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -2555,12 +2555,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1637
     y: 0
-    width: 404
+    width: 444
     height: 1284
   m_MinSize: {x: 100, y: 112}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 84220
+  controlID: 92614
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -2579,7 +2579,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 404
+    width: 444
     height: 736
   m_MinSize: {x: 202, y: 226}
   m_MaxSize: {x: 4002, y: 4026}
@@ -2611,7 +2611,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1638
     y: 87
-    width: 402
+    width: 442
     height: 710
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -2628,13 +2628,12 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 3695}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
       - m_Data: 46848
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -145200
       - m_Data: -120124
       - m_Data: -109218
       - m_Data: -29692
@@ -2695,7 +2694,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 736
-    width: 404
+    width: 444
     height: 548
   m_MinSize: {x: 232, y: 276}
   m_MaxSize: {x: 10002, y: 10026}
@@ -2727,7 +2726,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1638
     y: 823
-    width: 402
+    width: 442
     height: 522
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -2752,7 +2751,8 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets/SciFi Warehouse Kit/Art/Textures/Skybox
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -2838,14 +2838,18 @@ MonoBehaviour:
     - m_Data: 48624
     - m_Data: 48626
     - m_Data: 48628
+    - m_Data: 48996
     - m_Data: 49002
-    - m_Data: 49004
+    - m_Data: 49302
     - m_Data: 55088
+    - m_Data: 55164
     - m_Data: 55216
+    - m_Data: 55260
     - m_Data: 55346
     - m_Data: 55364
     - m_Data: 55388
     - m_Data: 55504
+    - m_Data: 55518
     - m_Data: 55588
     - m_Data: 55610
     - m_Data: 124214
@@ -2875,10 +2879,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 4}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: -268500
-    - m_Data: -268502
+    - m_Data: 92428
     m_LastClickedID:
       m_Data: 0
     m_ExpandedIDs:
@@ -2947,14 +2950,18 @@ MonoBehaviour:
     - m_Data: 48624
     - m_Data: 48626
     - m_Data: 48628
+    - m_Data: 48996
     - m_Data: 49002
-    - m_Data: 49004
+    - m_Data: 49302
     - m_Data: 55088
+    - m_Data: 55164
     - m_Data: 55216
+    - m_Data: 55260
     - m_Data: 55346
     - m_Data: 55364
     - m_Data: 55388
     - m_Data: 55504
+    - m_Data: 55518
     - m_Data: 55588
     - m_Data: 55610
     - m_Data: 124214
@@ -2985,9 +2992,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: -268500
-    - m_Data: -268502
-    m_LastClickedInstanceID: -268500
+    - m_Data: 92428
+    m_LastClickedInstanceID: 92428
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
@@ -3034,9 +3040,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 2041
+    x: 2081
     y: 0
-    width: 517
+    width: 477
     height: 1284
   m_MinSize: {x: 276, y: 76}
   m_MaxSize: {x: 4001, y: 4026}
@@ -3066,9 +3072,9 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 2042
+    x: 2082
     y: 87
-    width: 516
+    width: 476
     height: 1258
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -3089,7 +3095,7 @@ MonoBehaviour:
     m_CachedPref: 329
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -268502
+  m_LastInspectedObjectInstanceID: 92428
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

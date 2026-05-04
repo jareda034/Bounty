@@ -5,9 +5,14 @@ using UnityEngine.InputSystem;
 public class PlayerMovementController : MonoBehaviour
 {
     // Variables
+    [Header("Player Movement Settings")]
     [SerializeField] float playerSpeed = 5.0f;
     [SerializeField] float rotationSpeed = 0.15f;
+
     public bool isMoving;
+
+    [Header("Reference Settings")]
+    [SerializeField] LayerMask mouseInteractLayer;
     Rigidbody rb;
     Vector3 playerMovement, rotationTarget;
     Vector2 mouseLook;
@@ -31,7 +36,7 @@ public class PlayerMovementController : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        if(weapon.isReloading){ return; }
+        if (weapon.isReloading) { return; }
         playerMovement = value.Get<Vector2>();
     }
 
@@ -59,8 +64,9 @@ public class PlayerMovementController : MonoBehaviour
     {
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(mouseLook);
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, mouseInteractLayer))
         {
+
             rotationTarget = hit.point;
         }
     }

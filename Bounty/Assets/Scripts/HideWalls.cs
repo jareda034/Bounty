@@ -3,10 +3,16 @@ using UnityEngine;
 
 public class HideWalls : MonoBehaviour
 {
+ [Header("Reference Settings")]
  [SerializeField] Transform player;
  [SerializeField] LayerMask wallLayer;
- float hideFadDuration = 0.5f;
+ [SerializeField] Material Clear;
+ [SerializeField] Material wallMat;
 
+ [Header("Fade Settings")]
+ [SerializeField] float hideFadDuration = 0.5f;
+
+ [Header("List Settings")]
  private List<GameObject> hiddenWalls = new List<GameObject>();
 
     void LateUpdate()
@@ -18,7 +24,7 @@ public class HideWalls : MonoBehaviour
     {
         foreach (var wall in hiddenWalls)
         {
-            wall.SetActive(true);
+            ChangeWallMaterial(wall, wallMat);
         }
 
         hiddenWalls.Clear();
@@ -31,12 +37,20 @@ public class HideWalls : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("Wall"))
             {
-                Debug.Log("Object hit");
                 GameObject hitWall = hit.collider.gameObject;
-                hitWall.SetActive(false);
+                ChangeWallMaterial(hitWall, Clear);
                 hiddenWalls.Add(hitWall);
             }
         
        }
+    }
+
+    void ChangeWallMaterial(GameObject wall, Material mat)
+    {
+        Renderer wallRenderer = wall.GetComponent<Renderer>();
+        if (wallRenderer != null)
+        {
+            wallRenderer.material = mat;
+        }
     }
 }
