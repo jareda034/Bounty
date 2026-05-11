@@ -8,7 +8,8 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] Transform BulletPoint;
     [SerializeField] float rifleFireRate = 2f;
-    [SerializeField] int playerAmmo;
+    [SerializeField] int playerMaxAmmo = 90;
+    [SerializeField] int loadedAmmo;
 
     int rilfeAmmo = 30;
     bool hasRifle;
@@ -16,6 +17,7 @@ public class PlayerWeapon : MonoBehaviour
     bool canShoot = true;
     bool isFiring;
 
+    [Header("References")]
     Animator anim;
     PlayerMovementController playerMovement;
 
@@ -31,7 +33,7 @@ public class PlayerWeapon : MonoBehaviour
         if (rifle == true)
         {
             hasRifle = true;
-            playerAmmo = rilfeAmmo;
+            loadedAmmo = rilfeAmmo;
         }
     }
 
@@ -54,14 +56,14 @@ public class PlayerWeapon : MonoBehaviour
     }
 
     void OnShoot(InputValue value)
-    { 
-       isFiring = value.isPressed;
+    {
+        isFiring = value.isPressed;
     }
 
     void CanShoot()
     {
         if (playerMovement.isMoving || isReloading || !canShoot) { return; }
-        if (isFiring && playerAmmo > 0)
+        if (isFiring && loadedAmmo > 0)
         {
             HandleShoot();
         }
@@ -72,21 +74,25 @@ public class PlayerWeapon : MonoBehaviour
         canShoot = false;
         ShootWeapon();
         anim.SetTrigger("shooting");
-        playerAmmo--;
+        loadedAmmo--;
         Invoke(nameof(ResetShoot), rifleFireRate);
-        if (playerAmmo == 0)
+        if (playerMaxAmmo <= 0) { return; }
+        if (loadedAmmo == 0)
         {
             anim.SetBool("isReloading", true);
             isReloading = true;
-            Invoke(nameof(ResetReload), 2f);
+            Invoke(nameof(ResetReload), 1.8f);
         }
     }
 
     void ResetReload()
     {
         isReloading = false;
-        playerAmmo = rilfeAmmo;
+        loadedAmmo = rilfeAmmo;
+        playerMaxAmmo -= rilfeAmmo;
         anim.SetBool("isReloading", false);
+        Debug.Log(playerMaxAmmo);
+        Debug.Log(loadedAmmo);
     }
 
     void ResetShoot()
@@ -97,5 +103,10 @@ public class PlayerWeapon : MonoBehaviour
     void ShootWeapon()
     {
         Instantiate(bullet, BulletPoint.position, BulletPoint.rotation);
+    }
+
+    public void AddAmmo(int amount)
+    {
+        playerMaxAmmo += amount;
     }
 }

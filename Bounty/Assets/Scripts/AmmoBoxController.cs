@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class AmmoBoxController : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+   int ammoAmount = 15;
 
-    // Update is called once per frame
-    void Update()
+   void OnTriggerEnter(Collider collider)
     {
-        
+        PlayerWeapon player = collider.GetComponent<PlayerWeapon>();
+        if (player != null)
+        {
+            player.AddAmmo(ammoAmount);
+            Destroy(gameObject);
+        }
     }
 }
