@@ -82,11 +82,31 @@ public class PlayerWeapon : MonoBehaviour
         {
             anim.SetBool("isReloading", true);
             isReloading = true;
-            Invoke(nameof(ResetReload), 1.8f);
+            Invoke(nameof(ResetReloadOnEmpty), 1.8f);
         }
     }
 
+    void OnReload(InputValue value)
+    {
+        if ( playerMovement.isMoving || isReloading || loadedAmmo == rilfeAmmo || playerMaxAmmo <= 0) { return;}
+        isReloading = true;
+        anim.SetBool("isReloading", true);
+        Invoke(nameof(ResetReload), 1.8f);
+    }
+
     void ResetReload()
+    {
+        isReloading = false;
+        int ammoNeeded = rilfeAmmo - loadedAmmo;
+        if (playerMaxAmmo >= ammoNeeded)
+        {
+            loadedAmmo += ammoNeeded;
+            playerMaxAmmo -= ammoNeeded;
+        }
+        anim.SetBool("isReloading", false);
+    }
+
+    void ResetReloadOnEmpty()
     {
         isReloading = false;
         loadedAmmo = rilfeAmmo;
