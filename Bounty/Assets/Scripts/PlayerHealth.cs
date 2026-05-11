@@ -36,4 +36,9 @@ public class PlayerHealth : MonoBehaviour
     {
         return playerAlive;
     }
+
+    public float GetPlayerHealth()
+    {
+        return playerHealth;
+    }
 } 
