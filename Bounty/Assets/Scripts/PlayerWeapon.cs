@@ -77,13 +77,6 @@ public class PlayerWeapon : MonoBehaviour
         anim.SetTrigger("shooting");
         loadedAmmo--;
         Invoke(nameof(ResetShoot), rifleFireRate);
-        if (playerMaxAmmo <= 0) { return; }
-        if (loadedAmmo == 0)
-        {
-            anim.SetBool("isReloading", true);
-            isReloading = true;
-            Invoke(nameof(ResetReloadOnEmpty), 1.8f);
-        }
     }
 
     void OnReload(InputValue value)
@@ -103,17 +96,12 @@ public class PlayerWeapon : MonoBehaviour
             loadedAmmo += ammoNeeded;
             playerMaxAmmo -= ammoNeeded;
         }
+        else
+        {
+            loadedAmmo += playerMaxAmmo;
+            playerMaxAmmo = 0;
+        }
         anim.SetBool("isReloading", false);
-    }
-
-    void ResetReloadOnEmpty()
-    {
-        isReloading = false;
-        loadedAmmo = rilfeAmmo;
-        playerMaxAmmo -= rilfeAmmo;
-        anim.SetBool("isReloading", false);
-        Debug.Log(playerMaxAmmo);
-        Debug.Log(loadedAmmo);
     }
 
     void ResetShoot()
