@@ -4,6 +4,8 @@ public class AmmoBoxController : MonoBehaviour
 {
     [Header("Box Spin Settings")]
     [SerializeField] float spinSpeed = 50f;
+    [Header("Particle Settings")]
+    [SerializeField] GameObject pickupParticles;
 
    int ammoAmount = 15;
 
@@ -13,6 +15,7 @@ public class AmmoBoxController : MonoBehaviour
         if (player != null)
         {
             player.AddAmmo(ammoAmount);
+            Instantiate(pickupParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
