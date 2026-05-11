@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1679450462352715594}
   - component: {fileID: 2903634446383019268}
   m_Layer: 0
-  m_Name: Ammo Pick-Up EFX
+  m_Name: Ammo Pick-Up EFX 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

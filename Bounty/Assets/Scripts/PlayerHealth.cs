@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
     [Header("Health Settings")]
     [SerializeField] float playerHealth = 20f;
     bool playerAlive = true;
-    [Header("Ref")]
+    [Header("References")]
     Animator anim;
 
     void Awake()
@@ -22,6 +22,14 @@ public class PlayerHealth : MonoBehaviour
         if (playerHealth <= 0)
         {
             Death();
+        }
+    }
+    public void HealPlayer(float heal)
+    {
+        playerHealth += heal;
+        if (playerHealth > 20f)
+        {
+            playerHealth = 20f;
         }
     }
 
