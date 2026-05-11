@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.ComponentModel.Design;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -108,5 +109,15 @@ public class PlayerWeapon : MonoBehaviour
     public void AddAmmo(int amount)
     {
         playerMaxAmmo += amount;
+    }
+
+    public int GetLoadedAmmo()
+    {
+        return loadedAmmo;
+    }
+
+    public int GetMaxAmmo()
+    {
+        return playerMaxAmmo;
     }
 }
