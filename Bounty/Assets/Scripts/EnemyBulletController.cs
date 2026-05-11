@@ -32,5 +32,9 @@ public class EnemyBulletController : MonoBehaviour
             }
             Destroy(gameObject);
         }
+        else if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

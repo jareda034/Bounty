@@ -5,12 +5,13 @@ using UnityEngine.AI;
 
 public class RandomEnemyPatrol : MonoBehaviour
 {
-    [Header("Ref")]
+    [Header("References")]
     EnemyAttack enemyAttack;
     PlayerHealth playerHealth;
     [SerializeField] private Transform target;
     Animator anim;
     NavMeshAgent agent;
+    EnemyHealth enemyHealth;
 
     [Header("Patrol Settings")]
     [SerializeField] float patrolRange;
@@ -36,6 +37,7 @@ public class RandomEnemyPatrol : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         enemyAttack = GetComponent<EnemyAttack>();
+        enemyHealth = GetComponent<EnemyHealth>();
         playerHealth = FindAnyObjectByType<PlayerHealth>();
         centrePoint = agent.transform.position;
         GetTarget();
@@ -57,6 +59,7 @@ public class RandomEnemyPatrol : MonoBehaviour
     {
         EnemyBehaviour();
         DetectPlayer();
+        HurtLocation();
     }
 
     void EnemyBehaviour()
@@ -88,6 +91,20 @@ public class RandomEnemyPatrol : MonoBehaviour
 
     }
 
+    void HurtLocation()
+    {
+        if (enemyHealth.GetEnemyDamaged() == true && !playerInAttackRange)
+        {
+            agent.SetDestination(target.transform.position);
+                if (target != null)
+                {
+                    Vector3 targetCenter = new Vector3(target.position.x, target.position.y + 1f, target.position.z);
+                    transform.LookAt(targetCenter);
+                }
+            Debug.Log("Target Locked");
+        }
+    }
+
     void FireWeapon()
     {
         if (playerHealth.GetPlayerAlive() == true)
@@ -96,7 +113,7 @@ public class RandomEnemyPatrol : MonoBehaviour
             Debug.Log("Player In Range");
             if (target != null)
             {
-                Vector3 targetCenter = new Vector3(target.position.x, target.position.y + 0.5f, target.position.z);
+               Vector3 targetCenter = new Vector3(target.position.x, target.position.y + 1f, target.position.z);
                 transform.LookAt(targetCenter);
             }
             if (!attackOnCoolDown)
