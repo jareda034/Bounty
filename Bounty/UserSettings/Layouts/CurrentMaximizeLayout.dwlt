@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 45084
+  controlID: 45301
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 112}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 44911
+  controlID: 45302
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -175,8 +175,8 @@ MonoBehaviour:
     y: 0
     width: 1660
     height: 693
-  m_MinSize: {x: 201, y: 226}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
@@ -2577,7 +2577,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 112}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 45085
+  controlID: 45367
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -2756,7 +2756,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Music
+    - Assets/Audio/Sound Effects
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -3040,7 +3040,8 @@ MonoBehaviour:
     - m_Data: 976464
     - m_Data: 976468
     - m_Data: 1022860
-    - m_Data: 2114888
+    - m_Data: 2218202
+    - m_Data: 2218232
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3172,7 +3173,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: 51170
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 648
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
