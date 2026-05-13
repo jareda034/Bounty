@@ -14,7 +14,7 @@ public class HealthPickUp : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
         PlayerHealth player = collider.GetComponent<PlayerHealth>();
-        if (player != null)
+        if (player != null && player.GetPlayerHealth() < 20f)
         {
             player.HealPlayer(healingAmount);
             Instantiate(healthParticles, transform.position, Quaternion.identity);
