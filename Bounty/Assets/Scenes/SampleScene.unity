@@ -19939,8 +19939,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowPlayerCamera
   target: {fileID: 1941509263}
-  smoothTime: 0.3
   offset: {x: 0, y: 0, z: 0}
+  smoothTime: 0.3
+  mouseInfluence: 0.1
 --- !u!4 &458886214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6954531691785998512, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
@@ -95456,7 +95457,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 73bee4e429d7f2b41b033c78040694c2, type: 2}
     - target: {fileID: 1314605628059202702, guid: 3471c99d2634664429d05679086e731d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.38
+      value: 48.36
       objectReference: {fileID: 0}
     - target: {fileID: 1314605628059202702, guid: 3471c99d2634664429d05679086e731d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -95464,7 +95465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1314605628059202702, guid: 3471c99d2634664429d05679086e731d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.15
+      value: -20.7
       objectReference: {fileID: 0}
     - target: {fileID: 1314605628059202702, guid: 3471c99d2634664429d05679086e731d, type: 3}
       propertyPath: m_LocalRotation.w

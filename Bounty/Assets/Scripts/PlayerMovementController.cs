@@ -8,6 +8,8 @@ public class PlayerMovementController : MonoBehaviour
     [Header("Player Movement Settings")]
     [SerializeField] float playerSpeed = 5.0f;
     [SerializeField] float rotationSpeed = 0.15f;
+    [Header("Mouse Look Settings")]
+    Vector3 mousePos, playerPos;
 
     public bool isMoving;
 
