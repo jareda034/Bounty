@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &751788404762108577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6545185053692320640}
+  m_Layer: 0
+  m_Name: FirePoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6545185053692320640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751788404762108577}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.23, y: 0.909, z: 0.641}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7412365574004018532}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1900721108631762314
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,10 +144,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1186841d48db844bb1008b669498731, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3731698400431039696}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1186841d48db844bb1008b669498731, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1186841d48db844bb1008b669498731, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2364395982995162420}
+      addedObject: {fileID: 6545185053692320640}
+    m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1186841d48db844bb1008b669498731, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4002738367712807628}
@@ -135,6 +166,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1186841d48db844bb1008b669498731, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2053206395761728386}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c1186841d48db844bb1008b669498731, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4960237766520357098}
   m_SourcePrefab: {fileID: 100100000, guid: c1186841d48db844bb1008b669498731, type: 3}
 --- !u!4 &7412365574004018532 stripped
 Transform:
@@ -146,20 +180,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c1186841d48db844bb1008b669498731, type: 3}
   m_PrefabInstance: {fileID: 7013435350628788879}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2364395982995162420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7896450184562366430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 732b16fbc2226944eaca6926b3c5a8ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack
-  Bullet: {fileID: 5866248205663496214, guid: ee19a22624e5217478d39a0d4edcfb39, type: 3}
-  firePoint: {fileID: 3731698400431039696}
 --- !u!114 &4002738367712807628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +201,7 @@ MonoBehaviour:
     m_Bits: 64
   playerSeenRange: 12
   playerAttackRange: 9
-  attackRate: 0.5
+  attackRate: 1.5
 --- !u!114 &2919830834099487405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,3 +309,18 @@ CapsuleCollider:
   m_Height: 1.3645502
   m_Direction: 1
   m_Center: {x: 0.023501886, y: 0.7780992, z: -0.030120937}
+--- !u!114 &4960237766520357098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896450184562366430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af8f6f84ea54dc499330a6ec0a49e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpiderDroidAttack
+  Bullet: {fileID: 5866248205663496214, guid: ee19a22624e5217478d39a0d4edcfb39, type: 3}
+  firePoint1: {fileID: 3731698400431039696}
+  firePoint2: {fileID: 6545185053692320640}

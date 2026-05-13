@@ -7,6 +7,7 @@ public class RandomEnemyPatrol : MonoBehaviour
 {
     [Header("References")]
     EnemyAttack enemyAttack;
+    SpiderDroidAttack spiderDroidAttack;
     PlayerHealth playerHealth;
     [SerializeField] private Transform target;
     Animator anim;
@@ -21,6 +22,7 @@ public class RandomEnemyPatrol : MonoBehaviour
 
     bool playerIsSeen;
     bool playerInAttackRange;
+    public bool isSpiderDroid;
 
     [Header("LayerMask Settings")]
     [SerializeField] private LayerMask playerLayer;
@@ -38,6 +40,7 @@ public class RandomEnemyPatrol : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         enemyAttack = GetComponent<EnemyAttack>();
+        spiderDroidAttack = GetComponent<SpiderDroidAttack>();
         enemyHealth = GetComponent<EnemyHealth>();
         playerHealth = FindAnyObjectByType<PlayerHealth>();
         centrePoint = agent.transform.position;
@@ -105,7 +108,14 @@ public class RandomEnemyPatrol : MonoBehaviour
             }
             if (!attackOnCoolDown)
             {
-                enemyAttack.FireBullet();
+                if (isSpiderDroid)
+                {
+                    spiderDroidAttack.FireBullet();
+                }
+                if (!isSpiderDroid)
+                {
+                  enemyAttack.FireBullet();  
+                }
                 StartCoroutine(AttackCoolDown());
             }
         }

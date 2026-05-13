@@ -32,7 +32,7 @@ public class EnemyBulletController : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        else if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("Door") || other.gameObject.CompareTag("Decorations"))
+        else
         {
             Destroy(gameObject);
         }
