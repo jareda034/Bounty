@@ -59,22 +59,21 @@ public class RandomEnemyPatrol : MonoBehaviour
     {
         EnemyBehaviour();
         DetectPlayer();
-        HurtLocation();
     }
 
     void EnemyBehaviour()
     {
-        if (!playerIsSeen && !playerInAttackRange)
+        if (!playerIsSeen && !playerInAttackRange && !enemyHealth.GetEnemyDamaged())
         {
             Patrol();
             anim.SetBool("isMoving", true);
         }
-        else if (playerIsSeen && !playerInAttackRange)
+        else if (playerIsSeen && !playerInAttackRange || enemyHealth.GetEnemyDamaged() == true )
         {
             ChaseTarget();
             anim.SetBool("isMoving", true);
         }
-        else if (playerIsSeen && playerInAttackRange)
+        else if (playerIsSeen && playerInAttackRange && !enemyHealth.GetEnemyDamaged())
         {
             FireWeapon();
             anim.SetBool("isMoving", false);
@@ -89,20 +88,6 @@ public class RandomEnemyPatrol : MonoBehaviour
             Debug.Log("Player Seen");
         }
 
-    }
-
-    void HurtLocation()
-    {
-        if (enemyHealth.GetEnemyDamaged() == true && !playerInAttackRange)
-        {
-            agent.SetDestination(target.transform.position);
-                if (target != null)
-                {
-                    Vector3 targetCenter = new Vector3(target.position.x, target.position.y + 1f, target.position.z);
-                    transform.LookAt(targetCenter);
-                }
-            Debug.Log("Target Locked");
-        }
     }
 
     void FireWeapon()
@@ -144,10 +129,10 @@ public class RandomEnemyPatrol : MonoBehaviour
         {
             waitTime -= Time.deltaTime;
             anim.SetBool("isLooking", true);
-            Vector3 point;
-            if (RandomPoint(centrePoint, patrolRange, out point))
+            if (waitTime <= 0)
             {
-                if (waitTime <= 0)
+                Vector3 point;
+                if (RandomPoint(centrePoint, patrolRange, out point))
                 {
                     agent.SetDestination(point);
                     anim.SetBool("isLooking", false);
@@ -169,5 +154,10 @@ public class RandomEnemyPatrol : MonoBehaviour
 
         result = Vector3.zero;
         return false;
+    }
+
+    public bool GetPlayerInAttackRange()
+    {
+        return playerInAttackRange;
     }
 }

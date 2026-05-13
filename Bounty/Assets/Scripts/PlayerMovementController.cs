@@ -18,6 +18,7 @@ public class PlayerMovementController : MonoBehaviour
     Vector2 mouseLook;
     Animator anim;
     PlayerWeapon weapon;
+    DoorController[] doorControllers;
 
 
     void Awake()
@@ -25,6 +26,7 @@ public class PlayerMovementController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         weapon = GetComponent<PlayerWeapon>();
+        doorControllers = FindObjectsByType<DoorController>(FindObjectsSortMode.None);
     }
 
     void FixedUpdate()
@@ -90,5 +92,16 @@ public class PlayerMovementController : MonoBehaviour
 
         anim.SetFloat("MoveX", localmove.x);
         anim.SetFloat("MoveY", localmove.z);
+    }
+
+    void OnInteract(InputValue value)
+    {
+        if (value.isPressed)
+        {
+           foreach (DoorController door in doorControllers)
+            {
+                door.OpenDoor();
+            }
+        }
     }
 }
