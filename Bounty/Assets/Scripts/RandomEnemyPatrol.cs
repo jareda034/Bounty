@@ -16,6 +16,7 @@ public class RandomEnemyPatrol : MonoBehaviour
     [Header("Patrol Settings")]
     [SerializeField] float patrolRange;
     [SerializeField] float waitTime = 2f;
+    [SerializeField] float chaseSpeed = 3.5f;
     Vector3 centrePoint;
 
     bool playerIsSeen;
@@ -25,8 +26,8 @@ public class RandomEnemyPatrol : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
 
     [Header("Decetion Range")]
-    [SerializeField] float playerSeenRange = 20f;
-    [SerializeField] float playerAttackRange = 15f;
+    [SerializeField] float playerSeenRange = 34f;
+    [SerializeField] float playerAttackRange = 28f;
 
     [Header("Attack Cooldown Settings")]
     [SerializeField] float attackRate = 1f;
@@ -85,6 +86,7 @@ public class RandomEnemyPatrol : MonoBehaviour
         if (target != null)
         {
             agent.SetDestination(target.transform.position);
+            agent.speed = chaseSpeed;
             Debug.Log("Player Seen");
         }
 
