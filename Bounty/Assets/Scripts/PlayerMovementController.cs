@@ -102,6 +102,7 @@ public class PlayerMovementController : MonoBehaviour
            foreach (DoorController door in doorControllers)
             {
                 door.OpenDoor();
+                door.SecurityDoor();
             }
         }
     }

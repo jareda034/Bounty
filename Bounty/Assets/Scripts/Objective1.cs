@@ -5,19 +5,18 @@ public class Objective1 : MonoBehaviour
 {
    QuestManager questManager;
    [Header("Objective Settings")]
-   [SerializeField] GameObject keyCard;
    bool hasKeyCard = false;
    [Header("Card Rotation Settings")]
    [SerializeField] float rotationSpeed = 50f;
 
     void Awake()
     {
-        questManager = GetComponent<QuestManager>();
+        questManager = FindAnyObjectByType<QuestManager>();
     }
 
     void SpinKeyCard()
     {
-        keyCard.transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider other)
@@ -26,7 +25,7 @@ public class Objective1 : MonoBehaviour
         if (player != null)
         {
             ObjectiveGoal();
-            keyCard.SetActive(false);
+            transform.gameObject.SetActive(false);
             hasKeyCard = true;
         }
     }

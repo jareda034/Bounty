@@ -23,6 +23,7 @@ public class DoorController : MonoBehaviour
 
     public void OpenDoor()
     {
+        if (isSecurityDoor) { return;}
         if (playerinRange)
         {
             door.SetActive(false);
@@ -47,13 +48,13 @@ public class DoorController : MonoBehaviour
         
     }
 
-    void SecurityDoor()
+    public void SecurityDoor()
     {
-        if (isSecurityDoor)
+        if ( playerinRange && isSecurityDoor)
         {
             if (objective1.HasKeyCard())
             {
-               OpenDoor(); 
+               door.SetActive(false);
             }
         }
     }
