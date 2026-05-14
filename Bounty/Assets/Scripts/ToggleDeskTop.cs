@@ -5,6 +5,8 @@ public class ToggleDeskTop : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] GameObject DeskTopUI;
+    [SerializeField] GameObject filePanel;
+    [SerializeField] GameObject cameraButton;
     PlayerMovementController player;
     [Header("Interaction Settings")]
     [SerializeField] float interactionRange = 3f;
@@ -42,6 +44,12 @@ public class ToggleDeskTop : MonoBehaviour
             isUIOpen = true;
         }
 
+    }
+
+    public void OpenFiles()
+    {
+        filePanel.SetActive(true);
+        cameraButton.SetActive(false);
     }
 
     public void CloseUI()
