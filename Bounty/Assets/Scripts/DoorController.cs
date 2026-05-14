@@ -6,14 +6,18 @@ public class DoorController : MonoBehaviour
 {
   [Header("References")]
   [SerializeField] GameObject door;
+  Objective1 objective1;
   PlayerMovementController player;
   [Header("Settings")]
   [SerializeField] float interactionRange = 3f;
+  [Header("Security Door Settings")]
+  [SerializeField] bool isSecurityDoor = false;
   bool playerinRange =  false;
 
   void Awake()
     {
         player = FindFirstObjectByType<PlayerMovementController>();
+        objective1 = FindFirstObjectByType<Objective1>();
     }
      
 
@@ -41,5 +45,16 @@ public class DoorController : MonoBehaviour
             playerinRange = false;
         }
         
+    }
+
+    void SecurityDoor()
+    {
+        if (isSecurityDoor)
+        {
+            if (objective1.HasKeyCard())
+            {
+               OpenDoor(); 
+            }
+        }
     }
 }

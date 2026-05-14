@@ -6,10 +6,18 @@ public class Objective1 : MonoBehaviour
    QuestManager questManager;
    [Header("Objective Settings")]
    [SerializeField] GameObject keyCard;
+   bool hasKeyCard = false;
+   [Header("Card Rotation Settings")]
+   [SerializeField] float rotationSpeed = 50f;
 
     void Awake()
     {
         questManager = GetComponent<QuestManager>();
+    }
+
+    void SpinKeyCard()
+    {
+        keyCard.transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider other)
@@ -19,6 +27,7 @@ public class Objective1 : MonoBehaviour
         {
             ObjectiveGoal();
             keyCard.SetActive(false);
+            hasKeyCard = true;
         }
     }
 
@@ -27,4 +36,9 @@ public class Objective1 : MonoBehaviour
             questManager.CompleteObjective();
         
     } 
+
+    public bool HasKeyCard()
+    {
+        return hasKeyCard;
+    }
 }
