@@ -21,6 +21,7 @@ public class PlayerMovementController : MonoBehaviour
     PlayerWeapon weapon;
     DoorController[] doorControllers;
     ToggleDeskTop toggleDeskTop;
+    KeyPadController keyPadController;
 
 
     void Awake()
@@ -30,6 +31,7 @@ public class PlayerMovementController : MonoBehaviour
         weapon = GetComponent<PlayerWeapon>();
         doorControllers = FindObjectsByType<DoorController>(FindObjectsSortMode.None);
         toggleDeskTop = FindAnyObjectByType<ToggleDeskTop>();
+        keyPadController = FindAnyObjectByType<KeyPadController>();
     }
 
     void FixedUpdate()
@@ -107,6 +109,7 @@ public class PlayerMovementController : MonoBehaviour
                 door.SecurityDoor();
             }
             toggleDeskTop.ToggleUI();
+            keyPadController.OpenKeyPad();
         }
     }
 }
