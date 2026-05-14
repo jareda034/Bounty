@@ -8,7 +8,7 @@ public class PlayerMovementController : MonoBehaviour
     [Header("Player Movement Settings")]
     [SerializeField] float playerSpeed = 5.0f;
     [SerializeField] float rotationSpeed = 0.15f;
-    
+
 
     public bool isMoving;
 
@@ -20,6 +20,7 @@ public class PlayerMovementController : MonoBehaviour
     Animator anim;
     PlayerWeapon weapon;
     DoorController[] doorControllers;
+    ToggleDeskTop toggleDeskTop;
 
 
     void Awake()
@@ -28,6 +29,7 @@ public class PlayerMovementController : MonoBehaviour
         anim = GetComponent<Animator>();
         weapon = GetComponent<PlayerWeapon>();
         doorControllers = FindObjectsByType<DoorController>(FindObjectsSortMode.None);
+        toggleDeskTop = FindAnyObjectByType<ToggleDeskTop>();
     }
 
     void FixedUpdate()
@@ -39,7 +41,7 @@ public class PlayerMovementController : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        if (weapon.isReloading) { return; }
+        if (weapon.isReloading || toggleDeskTop.IsUIOpen()) { return; }
         playerMovement = value.Get<Vector2>();
     }
 
@@ -99,11 +101,12 @@ public class PlayerMovementController : MonoBehaviour
     {
         if (value.isPressed)
         {
-           foreach (DoorController door in doorControllers)
+            foreach (DoorController door in doorControllers)
             {
                 door.OpenDoor();
                 door.SecurityDoor();
             }
+            toggleDeskTop.ToggleUI();
         }
     }
 }

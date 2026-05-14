@@ -2,30 +2,32 @@ using System.ComponentModel;
 using System.ComponentModel.Design;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerWeapon : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] GameObject rifle;
     [SerializeField] GameObject bullet;
     [SerializeField] Transform BulletPoint;
+     Animator anim;
+    PlayerMovementController playerMovement;
+    ToggleDeskTop toggleDeskTop;
+    [Header("Weapon Settings")]
     [SerializeField] float rifleFireRate = 2f;
     [SerializeField] int playerMaxAmmo = 90;
     [SerializeField] int loadedAmmo;
-
     int rilfeAmmo = 30;
     bool hasRifle;
     public bool isReloading;
     bool canShoot = true;
     bool isFiring;
 
-    [Header("References")]
-    Animator anim;
-    PlayerMovementController playerMovement;
-
     void Awake()
     {
         anim = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovementController>();
+        toggleDeskTop = FindAnyObjectByType<ToggleDeskTop>();
     }
 
     void Start()
@@ -63,7 +65,7 @@ public class PlayerWeapon : MonoBehaviour
 
     void CanShoot()
     {
-        if (playerMovement.isMoving || isReloading || !canShoot) { return; }
+        if (playerMovement.isMoving || isReloading || !canShoot || toggleDeskTop.IsUIOpen()) { return; }
         if (isFiring && loadedAmmo > 0)
         {
             HandleShoot();

@@ -3,15 +3,23 @@ using UnityEngine;
 
 public class Objective1 : MonoBehaviour
 {
-   QuestManager questManager;
-   [Header("Objective Settings")]
-   bool hasKeyCard = false;
-   [Header("Card Rotation Settings")]
-   [SerializeField] float rotationSpeed = 50f;
+    QuestManager questManager;
+    [Header("Objective Settings")]
+    bool hasKeyCard = false;
+    [Header("Card Rotation Settings")]
+    [SerializeField] float rotationSpeed = 50f;
 
     void Awake()
     {
         questManager = FindAnyObjectByType<QuestManager>();
+    }
+
+    void Update()
+    {
+        if (!hasKeyCard)
+        {
+            SpinKeyCard();
+        }
     }
 
     void SpinKeyCard()
@@ -32,9 +40,9 @@ public class Objective1 : MonoBehaviour
 
     void ObjectiveGoal()
     {
-            questManager.CompleteObjective();
-        
-    } 
+        questManager.CompleteObjective();
+
+    }
 
     public bool HasKeyCard()
     {

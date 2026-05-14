@@ -5,12 +5,12 @@ public class SecurityCameraController : MonoBehaviour
     [Header("References")]
     [SerializeField] GameObject DeskTopUI;
     [SerializeField] GameObject CameraUI;
-   [Header("Camera Settings")]
-  [SerializeField] Camera[] securtiyCameras;
-  [SerializeField] float switchTime = 0.5f;
-  int currentCameraIndex = 0;
+    [Header("Camera Settings")]
+    [SerializeField] Camera[] securtiyCameras;
+    [SerializeField] float switchTime = 0.5f;
+    int currentCameraIndex = 0;
 
-  public void OpenCamera()
+    public void OpenCamera()
     {
         DeskTopUI.SetActive(false);
         CameraUI.SetActive(true);
@@ -19,12 +19,19 @@ public class SecurityCameraController : MonoBehaviour
 
     public void SwitchCamera()
     {
-         securtiyCameras[currentCameraIndex].gameObject.SetActive(false);
-         currentCameraIndex++;
-         if (currentCameraIndex >= securtiyCameras.Length)
+        securtiyCameras[currentCameraIndex].gameObject.SetActive(false);
+        currentCameraIndex++;
+        if (currentCameraIndex >= securtiyCameras.Length)
         {
             currentCameraIndex = 0;
         }
-         securtiyCameras[currentCameraIndex].gameObject.SetActive(true);
+        securtiyCameras[currentCameraIndex].gameObject.SetActive(true);
+    }
+
+    public void CloseCams()
+    {
+        DeskTopUI.SetActive(true);
+        CameraUI.SetActive(false);
+        securtiyCameras[currentCameraIndex].gameObject.SetActive(false);
     }
 }
