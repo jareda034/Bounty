@@ -8,8 +8,6 @@ public class PlayerMovementController : MonoBehaviour
     [Header("Player Movement Settings")]
     [SerializeField] float playerSpeed = 5.0f;
     [SerializeField] float rotationSpeed = 0.15f;
-
-
     public bool isMoving;
 
     [Header("Reference Settings")]
@@ -43,7 +41,7 @@ public class PlayerMovementController : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        if (weapon.isReloading || toggleDeskTop.IsUIOpen()) { return; }
+        if (weapon.isReloading || toggleDeskTop.IsUIOpen() || keyPadController.KeyPadOpen()) { return; }
         playerMovement = value.Get<Vector2>();
     }
 

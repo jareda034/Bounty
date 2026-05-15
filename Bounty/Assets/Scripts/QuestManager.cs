@@ -8,6 +8,7 @@ public class QuestManager : MonoBehaviour
 {
     // Variables 
 
+    [Header("Objective Settings")]
     [SerializeField] private  String[] ObjectivesList;
     private int currentObjectiveIndex = 0;
     bool isObjectiveCompleted = false;

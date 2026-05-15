@@ -49,6 +49,12 @@ public class KeyPadController : MonoBehaviour
     public void CloseKeyPad()
     {
         keyPadUI.SetActive(false);
+        keyPadUIOpen = false;
+    }
+
+    public bool KeyPadOpen()
+    {
+        return keyPadUIOpen;
     }
 
 }
