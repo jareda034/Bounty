@@ -12,6 +12,7 @@ public class ToggleDeskTop : MonoBehaviour
     [SerializeField] float interactionRange = 3f;
     bool isPlayerInRange = false;
     bool isUIOpen = false;
+    bool isFileOpen = false;
 
 
     void Awake()
@@ -46,10 +47,20 @@ public class ToggleDeskTop : MonoBehaviour
 
     }
 
-    public void OpenFiles()
+    public void ToggleFiles()
     {
-        filePanel.SetActive(true);
-        cameraButton.SetActive(false);
+        if (!isFileOpen)
+        {
+            filePanel.SetActive(true);
+            cameraButton.SetActive(false);
+            isFileOpen = true;
+        }
+        else if (isFileOpen)
+        {
+            filePanel.SetActive(false);
+            cameraButton.SetActive(true);
+            isFileOpen = false;
+        }
     }
 
     public void CloseUI()

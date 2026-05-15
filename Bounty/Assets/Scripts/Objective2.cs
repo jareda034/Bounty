@@ -3,40 +3,36 @@ using UnityEngine;
 public class Objective2 : MonoBehaviour
 {
     [Header("Reference Settings")]
-   [SerializeField] Camera officeSecurityCamera;
-   QuestManager questManager;
-   [Header("Settings")]
-   bool isCameraActive = false;
+    [SerializeField] Camera officeSecurityCamera;
+    QuestManager questManager;
+    [Header("Settings")]
+    bool isGoalReached = false;
 
-   void Awake()
+    void Awake()
     {
         questManager = FindAnyObjectByType<QuestManager>();
     }
 
     void Update()
     {
+        if (isGoalReached) { return; }
         CheckIfCameraActive();
-        GoalComplete();
     }
 
     void CheckIfCameraActive()
     {
         if (officeSecurityCamera != null && officeSecurityCamera.gameObject.activeSelf)
         {
-           isCameraActive = true;
+            GoalComplete();
         }
-        else
-        {
-            isCameraActive = false;
-        }
+
     }
 
     void GoalComplete()
     {
-        if (isCameraActive)
-        {
-            questManager.CompleteObjective();
-        }
+        isGoalReached = true;
+        questManager.CompleteObjective();
+
     }
 
 }
