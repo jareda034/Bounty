@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 17687
+  controlID: 20719
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 112}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 17688
+  controlID: 20720
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -779,9 +779,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 1280.0001, y: 720, z: 0}
+    m_Target: {x: 1215, y: 299, z: 0}
     speed: 2
-    m_Value: {x: 1280.0001, y: 720, z: 0}
+    m_Value: {x: 1215, y: 299, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -831,9 +831,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.028465034, y: -0.028935634, z: 0.0016866224, w: 0.9991744}
   m_Size:
-    m_Target: 641.1588
+    m_Target: 961.2042
     speed: 2
-    m_Value: 641.1588
+    m_Value: 961.2042
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2504,8 +2504,8 @@ MonoBehaviour:
     y: 698
     width: 1661
     height: 595
-  m_MinSize: {x: 201, y: 226}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -2577,7 +2577,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 112}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 17744
+  controlID: 20782
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -2655,7 +2655,6 @@ MonoBehaviour:
       - m_Data: -1948
       - m_Data: 128360
       - m_Data: 128864
-      - m_Data: 130500
       - m_Data: 131284
       - m_Data: 131990
       m_RenameOverlay:
@@ -2811,7 +2810,7 @@ MonoBehaviour:
   m_AssetTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 127050
+    - m_Data: 131990
     m_LastClickedID:
       m_Data: 0
     m_ExpandedIDs:
@@ -2846,8 +2845,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 127050
-    m_LastClickedInstanceID: 127050
+    - m_Data: 131990
+    m_LastClickedInstanceID: 131990
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
@@ -2949,7 +2948,7 @@ MonoBehaviour:
     m_CachedPref: 329
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 127050
+  m_LastInspectedObjectInstanceID: 131990
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
