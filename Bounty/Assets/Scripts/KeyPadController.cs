@@ -1,5 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.Design;
+using Mono.Cecil.Cil;
 using UnityEngine;
+using TMPro;
+using Unity.VisualScripting;
 
 public class KeyPadController : MonoBehaviour
 {
@@ -11,8 +17,13 @@ public class KeyPadController : MonoBehaviour
     [SerializeField] float interactionRange;
     bool isPlayerInRange = false;
     [Header("UI Settings")]
-    bool keyPadUIOpen = false;
-
+     bool keyPadUIOpen = false;
+    [SerializeField] TMP_Text passwordText;
+    [Header("Code Settings")]
+    [SerializeField] string passWord =  "12234" ;
+    string playerInputs = "";
+    bool passWordIsSame = false;
+ 
 
     void Awake()
     {
@@ -55,6 +66,41 @@ public class KeyPadController : MonoBehaviour
     public bool KeyPadOpen()
     {
         return keyPadUIOpen;
+    }
+
+    public void ButtonValue(string value)
+    {
+        if (playerInputs.Length < passWord.Length)
+        {
+           playerInputs += value;
+           UpdatePassword();
+        }  
+    }
+
+    public void ClearPassword()
+    {
+        playerInputs = "";
+        UpdatePassword();
+    }
+
+    void UpdatePassword()
+    {
+        passwordText.text = playerInputs;
+    }
+
+    public void EnterPassword()
+    {
+        CheckPassword();
+    }
+
+    void CheckPassword()
+    {
+        if (playerInputs == passWord)
+        {
+            securityDoor.gameObject.SetActive(false);
+            keyPadUI.SetActive(false);
+            keyPadUIOpen = false;
+        }
     }
 
 }
