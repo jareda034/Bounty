@@ -71,6 +71,7 @@ Assets/
   RandomEnemyPatrol.cs
   SecurityCameraController.cs
   SpiderDroidAttack.cs
+  SurvivorController.cs
   ToggleDeskTop.cs
  Settings/TutorialInfo/Scripts/Readme.cs
  Survivalist/StarterAssets/

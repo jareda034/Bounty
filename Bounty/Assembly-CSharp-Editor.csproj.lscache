@@ -41,13 +41,7 @@ CommandLineArgsForDesignTimeEvaluation=-langversion:9.0 -define:UNITY_6000_3_0;U
 Assets/AkiDevCat/MicroAVL/Editor/
  MicroAVL.cs
  MicroAVLShaderGUI.cs
-Assets/
- Settings/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
- Survivalist/StarterAssets/Editor/
-  PackageChecker/PackageChecker.cs
-  ScriptingDefineUtils.cs
-  StarterAssetsDeployMenu.cs
-  ThirdPersonStarterAssetsDeployMenu.cs
+Assets/Settings/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
 Temp/obj/Assembly-CSharp-Editor/.NETStandard,Version=v2.1.AssemblyAttributes.cs
 
 [metadataReferences]
