@@ -43,7 +43,7 @@ public class PlayerMovementController : MonoBehaviour
 
     void OnMove(InputValue value)
     {
-        if (weapon.isReloading || toggleDeskTop.IsUIOpen() || keyPadController.KeyPadOpen()) { return; }
+        if (weapon.isReloading || toggleDeskTop.IsUIOpen() || keyPadController.KeyPadOpen() || survivorController.IsDialgueOpen()) { return; }
         playerMovement = value.Get<Vector2>();
     }
 

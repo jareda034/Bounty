@@ -7,21 +7,25 @@ public class SurvivorController : MonoBehaviour
     [SerializeField] GameObject survivorDialogue;
     PlayerMovementController player;
     NavMeshAgent agent;
+    QuestManager questManager;
+    Animator anim;
     [Header("Dialouge Settings")]
     int interactionRange = 3;
     bool dialogueOpen = false;
     bool inDialogueRange = false;
     bool canFollow = false;
     [Header("Movement Settings")]
-    [SerializeField] float speed = 5f;
+    [SerializeField] float speed = 6.5f;
     Transform target;
-    int stoppingRange = 2;
+    int stoppingRange = 4;
     bool stopFollowing = false;
 
     void Awake()
     {
         player = FindAnyObjectByType<PlayerMovementController>();
         agent = GetComponent<NavMeshAgent>();
+        questManager = FindAnyObjectByType<QuestManager>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -57,6 +61,7 @@ public class SurvivorController : MonoBehaviour
         survivorDialogue.gameObject.SetActive(false);
         dialogueOpen = false;
         canFollow = true;
+        questManager.CompleteObjective();
     }
 
     void FollowPlayer()
@@ -69,12 +74,14 @@ public class SurvivorController : MonoBehaviour
         if (target != null && stopFollowing == false)
         {
             agent.SetDestination(target.transform.position);
+            anim.SetBool("isMoving", true);
         }
         if (target != null)
         {
             if (Vector3.Distance(transform.position, target.transform.position) < stoppingRange)
             {
                 stopFollowing = true;
+                anim.SetBool("isMoving", false);
             }
             else
             {
@@ -82,4 +89,11 @@ public class SurvivorController : MonoBehaviour
             }
         }
     }
+
+    public bool IsDialgueOpen()
+    {
+        return dialogueOpen;
+    }
+
+    
 }

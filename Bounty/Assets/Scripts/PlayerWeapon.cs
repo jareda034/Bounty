@@ -14,6 +14,7 @@ public class PlayerWeapon : MonoBehaviour
     PlayerMovementController playerMovement;
     ToggleDeskTop toggleDeskTop;
     KeyPadController keyPadController;
+    SurvivorController survivorController;
     [Header("Weapon Settings")]
     [SerializeField] float rifleFireRate = 2f;
     [SerializeField] int playerMaxAmmo = 90;
@@ -30,6 +31,7 @@ public class PlayerWeapon : MonoBehaviour
         playerMovement = GetComponent<PlayerMovementController>();
         toggleDeskTop = FindAnyObjectByType<ToggleDeskTop>();
         keyPadController = FindAnyObjectByType<KeyPadController>();
+        survivorController = FindAnyObjectByType<SurvivorController>();
     }
 
     void Start()
@@ -67,7 +69,7 @@ public class PlayerWeapon : MonoBehaviour
 
     void CanShoot()
     {
-        if (playerMovement.isMoving || isReloading || !canShoot || toggleDeskTop.IsUIOpen() || keyPadController.KeyPadOpen()) { return; }
+        if (playerMovement.isMoving || isReloading || !canShoot || toggleDeskTop.IsUIOpen() || keyPadController.KeyPadOpen() || survivorController.IsDialgueOpen()) { return; }
         if (isFiring && loadedAmmo > 0)
         {
             HandleShoot();
