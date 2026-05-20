@@ -22,6 +22,7 @@ public class PlayerMovementController : MonoBehaviour
     ToggleDeskTop toggleDeskTop;
     KeyPadController keyPadController;
     SurvivorController survivorController;
+    Objective4 objective4;
 
 
     void Awake()
@@ -33,6 +34,7 @@ public class PlayerMovementController : MonoBehaviour
         toggleDeskTop = FindAnyObjectByType<ToggleDeskTop>();
         keyPadController = FindAnyObjectByType<KeyPadController>();
         survivorController = FindAnyObjectByType<SurvivorController>();
+        objective4 = FindAnyObjectByType<Objective4>();
         Physics.gravity = gravityScale;
     }
 
@@ -113,6 +115,7 @@ public class PlayerMovementController : MonoBehaviour
             toggleDeskTop.ToggleUI();
             keyPadController.OpenKeyPad();
             survivorController.OpenDialogue();
+            objective4.UseComputer();
         }
     }
 }
