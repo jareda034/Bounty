@@ -8,6 +8,7 @@ public class PlayerMovementController : MonoBehaviour
     [Header("Player Movement Settings")]
     [SerializeField] float playerSpeed = 5.0f;
     [SerializeField] float rotationSpeed = 0.15f;
+    Vector3 gravityScale = new Vector3(0, -50.0f, 0);
     public bool isMoving;
 
     [Header("Reference Settings")]
@@ -32,6 +33,7 @@ public class PlayerMovementController : MonoBehaviour
         toggleDeskTop = FindAnyObjectByType<ToggleDeskTop>();
         keyPadController = FindAnyObjectByType<KeyPadController>();
         survivorController = FindAnyObjectByType<SurvivorController>();
+        Physics.gravity = gravityScale;
     }
 
     void FixedUpdate()
