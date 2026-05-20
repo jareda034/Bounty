@@ -7,15 +7,18 @@ public class Objective4 : MonoBehaviour
   QuestManager questManager;
   PlayerMovementController player;
   Objective5 objective5;
+  SurvivorController survivorController;
   [Header("Interaction Settings")]
   float playerInteractionRamge = 4f;
   bool playerInRange = false;
+  bool objective4Done = false;
 
   void Awake()
     {
         player = FindAnyObjectByType<PlayerMovementController>();
         questManager = GetComponent<QuestManager>();
         objective5 = GetComponent<Objective5>();
+        survivorController = FindAnyObjectByType<SurvivorController>();
     }
 
     void Update()
@@ -37,10 +40,11 @@ public class Objective4 : MonoBehaviour
 
    public void UseComputer()
     {
-        if (playerInRange == true)
+        if (playerInRange == true && survivorController.GetObjectiveDone())
         {
             objective5.StartDoorOpening();
             questManager.CompleteObjective();
+            objective4Done = true;
         }
     }
 }

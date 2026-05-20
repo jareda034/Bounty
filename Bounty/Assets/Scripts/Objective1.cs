@@ -8,6 +8,8 @@ public class Objective1 : MonoBehaviour
     bool hasKeyCard = false;
     [Header("Card Rotation Settings")]
     [SerializeField] float rotationSpeed = 50f;
+    [Header("Objective Check Settings")]
+    bool objective1Done = false;
 
     void Awake()
     {
@@ -41,7 +43,12 @@ public class Objective1 : MonoBehaviour
     void ObjectiveGoal()
     {
         questManager.CompleteObjective();
+        objective1Done = true;
+    }
 
+    public bool GetObjectiveDone()
+    {
+        return objective1Done;
     }
 
     public bool HasKeyCard()

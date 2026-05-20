@@ -8,6 +8,7 @@ public class SurvivorController : MonoBehaviour
     PlayerMovementController player;
     NavMeshAgent agent;
     QuestManager questManager;
+    Objective3 objective3;
     Animator anim;
     [Header("Dialouge Settings")]
     int interactionRange = 3;
@@ -19,6 +20,8 @@ public class SurvivorController : MonoBehaviour
     Transform target;
     int stoppingRange = 4;
     bool stopFollowing = false;
+    [Header("Objective Check Settings")]
+    bool objectiveTalkDone = false;
 
     void Awake()
     {
@@ -26,6 +29,7 @@ public class SurvivorController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         questManager = FindAnyObjectByType<QuestManager>();
         anim = GetComponent<Animator>();
+        objective3 = FindAnyObjectByType<Objective3>();
     }
 
     void Update()
@@ -61,7 +65,11 @@ public class SurvivorController : MonoBehaviour
         survivorDialogue.gameObject.SetActive(false);
         dialogueOpen = false;
         canFollow = true;
-        questManager.CompleteObjective();
+        if (objective3.GetObjectiveDone())
+        {
+          questManager.CompleteObjective();  
+          objectiveTalkDone = true;
+        }
     }
 
     void FollowPlayer()
@@ -93,6 +101,11 @@ public class SurvivorController : MonoBehaviour
     public bool IsDialgueOpen()
     {
         return dialogueOpen;
+    }
+
+    public bool GetObjectiveDone()
+    {
+        return objectiveTalkDone;
     }
 
     

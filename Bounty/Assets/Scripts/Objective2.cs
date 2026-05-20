@@ -5,12 +5,16 @@ public class Objective2 : MonoBehaviour
     [Header("Reference Settings")]
     [SerializeField] Camera officeSecurityCamera;
     QuestManager questManager;
+    Objective1 objective1;
     [Header("Settings")]
     bool isGoalReached = false;
+    [Header("Objective Check Settings")]
+    bool objective2Done = false;
 
     void Awake()
     {
         questManager = FindAnyObjectByType<QuestManager>();
+        objective1 = FindAnyObjectByType<Objective1>();
     }
 
     void Update()
@@ -21,7 +25,7 @@ public class Objective2 : MonoBehaviour
 
     void CheckIfCameraActive()
     {
-        if (officeSecurityCamera != null && officeSecurityCamera.gameObject.activeSelf)
+        if (officeSecurityCamera != null && officeSecurityCamera.gameObject.activeSelf && objective1.GetObjectiveDone())
         {
             GoalComplete();
         }
@@ -32,7 +36,12 @@ public class Objective2 : MonoBehaviour
     {
         isGoalReached = true;
         questManager.CompleteObjective();
+        objective2Done = true;
+    }
 
+    public bool GetObjectiveDone()
+    {
+        return objective2Done;
     }
 
 }
