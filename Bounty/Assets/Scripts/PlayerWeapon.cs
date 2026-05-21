@@ -10,7 +10,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] GameObject rifle;
     [SerializeField] GameObject bullet;
     [SerializeField] Transform BulletPoint;
-     Animator anim;
+    Animator anim;
     PlayerMovementController playerMovement;
     ToggleDeskTop toggleDeskTop;
     KeyPadController keyPadController;
@@ -24,6 +24,11 @@ public class PlayerWeapon : MonoBehaviour
     public bool isReloading;
     bool canShoot = true;
     bool isFiring;
+    [Header("Audio Settings")]
+    [SerializeField] AudioClip gunSound;
+    [Range(0, 1)][SerializeField] float volume;
+    [SerializeField] AudioClip reloadSound;
+    [Range(0, 1)][SerializeField] float realodVolume;
 
     void Awake()
     {
@@ -87,9 +92,10 @@ public class PlayerWeapon : MonoBehaviour
 
     void OnReload(InputValue value)
     {
-        if ( playerMovement.isMoving || isReloading || loadedAmmo == rilfeAmmo || playerMaxAmmo <= 0) { return;}
+        if (playerMovement.isMoving || isReloading || loadedAmmo == rilfeAmmo || playerMaxAmmo <= 0) { return; }
         isReloading = true;
         anim.SetBool("isReloading", true);
+        PlayAudio(reloadSound, realodVolume);
         Invoke(nameof(ResetReload), 1.8f);
     }
 
@@ -110,6 +116,11 @@ public class PlayerWeapon : MonoBehaviour
         anim.SetBool("isReloading", false);
     }
 
+    void PlayAudio(AudioClip clip, float volume)
+    {
+       AudioSource.PlayClipAtPoint(clip, transform.position, volume);
+    }
+
     void ResetShoot()
     {
         canShoot = true;
@@ -118,6 +129,7 @@ public class PlayerWeapon : MonoBehaviour
     void ShootWeapon()
     {
         Instantiate(bullet, BulletPoint.position, BulletPoint.rotation);
+        PlayAudio(gunSound, volume);
     }
 
     public void AddAmmo(int amount)
