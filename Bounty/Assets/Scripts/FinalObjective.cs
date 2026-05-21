@@ -3,17 +3,21 @@ using UnityEngine;
 public class FinalObjective : MonoBehaviour
 {
     [Header("Reference Settings")]
-    [SerializeField] GameObject finalObjectiveBox;
     QuestManager questManager;
+    Objective5 objective5;
 
     void Awake()
     {
         questManager = FindAnyObjectByType<QuestManager>();
+        objective5 = FindAnyObjectByType<Objective5>();
     }
 
-    public void EnableTrigger()
+    void EnableTrigger()
     {
-        finalObjectiveBox.SetActive(true);
+        if (objective5.GetObjectiveDone())
+        {
+          gameObject.SetActive(true);  
+        }
     }
 
     void OnTriggerEnter(Collider other)

@@ -48,4 +48,9 @@ public class Objective4 : MonoBehaviour
             objective4Done = true;
         }
     }
+
+    public bool GetObjectiveDone()
+    {
+        return objective4Done;
+    }
 }

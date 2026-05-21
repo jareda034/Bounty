@@ -8,6 +8,11 @@ public class PlayerHealth : MonoBehaviour
     bool playerAlive = true;
     [Header("References")]
     Animator anim;
+    [Header("Audio Settings")]
+    [SerializeField] AudioClip hurtSound;
+    [Range(0, 1)][SerializeField] float volume;
+    [SerializeField] AudioClip deathSound;
+    [Range(0, 1)][SerializeField] float deathVolume;
 
     void Awake()
     {
@@ -17,10 +22,12 @@ public class PlayerHealth : MonoBehaviour
     public void DamagePlayer(float damage)
     {
         playerHealth -= damage;
+        PlayAudio(hurtSound,volume);
         anim.SetTrigger("damaged");
         Debug.Log(playerHealth);
         if (playerHealth <= 0)
         {
+            PlayAudio(deathSound, deathVolume);
             Death();
         }
     }
@@ -40,6 +47,11 @@ public class PlayerHealth : MonoBehaviour
         Destroy(gameObject, 5f);
     }
 
+    void PlayAudio(AudioClip clip, float volume)
+    {
+        AudioSource.PlayClipAtPoint(clip, transform.position, volume);
+    }
+
     public bool GetPlayerAlive()
     {
         return playerAlive;
@@ -49,4 +61,4 @@ public class PlayerHealth : MonoBehaviour
     {
         return playerHealth;
     }
-} 
+}

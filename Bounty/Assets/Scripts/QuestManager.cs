@@ -15,6 +15,11 @@ public class QuestManager : MonoBehaviour
     [Header("UI Settings")]
     [SerializeField] TextMeshProUGUI ObjectiveText;
 
+    void Awake()
+    {
+        ObjectiveText.color = Color.white;
+    }
+
 
     void Start()
     {
@@ -42,6 +47,13 @@ public class QuestManager : MonoBehaviour
     void StartObjective(string objective)
     {
         ObjectiveText.text = objective;
+        Invoke(nameof(ChangeColor), 1f);
+        ObjectiveText.color = Color.yellow;
+    }
+
+    void ChangeColor()
+    {
+        ObjectiveText.color = Color.green;
     }
 
     public void CompleteObjective()
