@@ -58,7 +58,7 @@ public class DoorController : MonoBehaviour
     {
         if (clip != null)
         {
-            AudioSource.PlayClipAtPoint(clip, transform.position, volume);
+           AudioSource.PlayClipAtPoint(clip, transform.position, volume); 
         }
 
     }
