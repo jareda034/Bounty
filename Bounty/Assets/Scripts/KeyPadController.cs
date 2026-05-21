@@ -17,18 +17,26 @@ public class KeyPadController : MonoBehaviour
     [SerializeField] float interactionRange;
     bool isPlayerInRange = false;
     [Header("UI Settings")]
-     bool keyPadUIOpen = false;
+    bool keyPadUIOpen = false;
     [SerializeField] TMP_Text passwordText;
     [Header("Code Settings")]
-    [SerializeField] string passWord =  "12234" ;
+    [SerializeField] string passWord = "12234";
     string playerInputs = "";
     bool passWordIsSame = false;
- 
+
+    [Header("Audio Settings")]
+    [SerializeField] AudioClip doorOpeningSound;
+    [Range(0, 1)][SerializeField] float volume;
 
     void Awake()
     {
         player = FindAnyObjectByType<PlayerMovementController>();
 
+    }
+
+    void PlayAudio(AudioClip clip, float volume)
+    {
+        AudioSource.PlayClipAtPoint(clip, transform.position, volume);
     }
 
     void Update()
@@ -72,9 +80,9 @@ public class KeyPadController : MonoBehaviour
     {
         if (playerInputs.Length < passWord.Length)
         {
-           playerInputs += value;
-           UpdatePassword();
-        }  
+            playerInputs += value;
+            UpdatePassword();
+        }
     }
 
     public void ClearPassword()
@@ -100,6 +108,7 @@ public class KeyPadController : MonoBehaviour
             securityDoor.gameObject.SetActive(false);
             keyPadUI.SetActive(false);
             keyPadUIOpen = false;
+            PlayAudio(doorOpeningSound, volume);
         }
     }
 

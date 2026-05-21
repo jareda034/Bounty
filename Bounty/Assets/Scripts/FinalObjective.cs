@@ -2,35 +2,25 @@ using UnityEngine;
 
 public class FinalObjective : MonoBehaviour
 {
-   [Header("Reference Settings")]
-   [SerializeField] GameObject finalObjectiveBox;
-   QuestManager questManager;
-   Objective5 objective5;
+    [Header("Reference Settings")]
+    [SerializeField] GameObject finalObjectiveBox;
+    QuestManager questManager;
 
-   void Awake()
+    void Awake()
     {
         questManager = FindAnyObjectByType<QuestManager>();
-        objective5 = FindAnyObjectByType<Objective5>();
     }
 
-    void Update()
+    public void EnableTrigger()
     {
-        EnableTrigger();
-    }
-
-    void EnableTrigger()
-    {
-        if (objective5.GetObjectiveDone())
-        {
-            finalObjectiveBox.SetActive(true);
-        }
+        finalObjectiveBox.SetActive(true);
     }
 
     void OnTriggerEnter(Collider other)
     {
-      PlayerMovementController player = other.GetComponent<PlayerMovementController>();
+        PlayerMovementController player = other.GetComponent<PlayerMovementController>();
 
-      if (player != null)
+        if (player != null)
         {
             Time.timeScale = 0f;
         }
