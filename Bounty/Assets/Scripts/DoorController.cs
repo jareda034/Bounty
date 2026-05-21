@@ -70,6 +70,7 @@ public class DoorController : MonoBehaviour
             if (objective1.HasKeyCard())
             {
                 door.SetActive(false);
+                PlayAudio(doorOpeningSound, volume);
             }
         }
     }

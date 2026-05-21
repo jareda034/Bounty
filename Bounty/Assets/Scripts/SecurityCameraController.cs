@@ -7,7 +7,6 @@ public class SecurityCameraController : MonoBehaviour
     [SerializeField] GameObject CameraUI;
     [Header("Camera Settings")]
     [SerializeField] Camera[] securtiyCameras;
-    [SerializeField] float switchTime = 0.5f;
     int currentCameraIndex = 0;
 
     public void OpenCamera()
@@ -34,4 +33,5 @@ public class SecurityCameraController : MonoBehaviour
         CameraUI.SetActive(false);
         securtiyCameras[currentCameraIndex].gameObject.SetActive(false);
     }
+
 }
