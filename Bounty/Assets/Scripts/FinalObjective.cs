@@ -13,6 +13,11 @@ public class FinalObjective : MonoBehaviour
         objective5 = FindAnyObjectByType<Objective5>();
     }
 
+    void Update()
+    {
+        EnableTrigger();
+    }
+
     void EnableTrigger()
     {
         if (objective5.GetObjectiveDone())

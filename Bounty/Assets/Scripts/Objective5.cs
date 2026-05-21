@@ -7,18 +7,17 @@ public class Objective5 : MonoBehaviour
     [SerializeField] GameObject bayDoor;
     [SerializeField] Light doorLight;
     QuestManager questManager;
+    FinalObjective finalObjective;
     [Header("Door Opening Settings")]
     [SerializeField] float openingSpeed = 0.5f;
     [SerializeField] float maxDistance = 3.9f;
     [Header("Light Settings")]
     [SerializeField] Color color;
     bool canDoorOpen = false;
-    [Header("Objective Check Settings")]
-    bool objective5Done = false;
-
     void Awake()
     {
         questManager = GetComponent<QuestManager>();
+        finalObjective = FindAnyObjectByType<FinalObjective>();
         doorLight.color = Color.red;
     }
 
@@ -44,13 +43,8 @@ public class Objective5 : MonoBehaviour
             finalPos.y = maxDistance;
             bayDoor.transform.position = finalPos;
             canDoorOpen = false;
-            objective5Done = true;
+            finalObjective.EnableTrigger();
             doorLight.color = new Color(0.087f, 0.736f, 1.0f);
         }
-    }
-
-    public bool GetObjectiveDone()
-    {
-        return objective5Done;
     }
 }
