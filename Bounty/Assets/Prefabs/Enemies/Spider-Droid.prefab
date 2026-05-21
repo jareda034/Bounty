@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 751788404762108577}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23, y: 0.909, z: 0.641}
+  m_LocalPosition: {x: -0.23, y: 0.909, z: 0.797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1900721108631762314}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.227, y: 0.909, z: 0.641}
+  m_LocalPosition: {x: 0.227, y: 0.909, z: 0.789}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,7 +76,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1186841d48db844bb1008b669498731, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.77019
+      value: 0.87909484
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1186841d48db844bb1008b669498731, type: 3}
       propertyPath: m_LocalScale.z
@@ -84,15 +84,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1186841d48db844bb1008b669498731, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.827
+      value: 39.8313
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1186841d48db844bb1008b669498731, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.17461
+      value: -1.1399
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1186841d48db844bb1008b669498731, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.309435
+      value: 18.32152
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c1186841d48db844bb1008b669498731, type: 3}
       propertyPath: m_LocalRotation.w
@@ -196,12 +196,14 @@ MonoBehaviour:
   patrolRange: 7
   waitTime: 4
   chaseSpeed: 4
+  isSpiderDroid: 1
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
   playerSeenRange: 12
   playerAttackRange: 9
   attackRate: 1.5
+  patrolSound: {fileID: 8300000, guid: e45c5c786cf856c469d9124e3df6addb, type: 3}
 --- !u!114 &2919830834099487405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +254,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -306,9 +308,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5314244
-  m_Height: 1.3645502
+  m_Height: 1.4510475
   m_Direction: 1
-  m_Center: {x: 0.023501886, y: 0.7780992, z: -0.030120937}
+  m_Center: {x: 0.023501886, y: 0.82134724, z: -0.030120937}
 --- !u!114 &4960237766520357098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,3 +326,5 @@ MonoBehaviour:
   Bullet: {fileID: 5866248205663496214, guid: ee19a22624e5217478d39a0d4edcfb39, type: 3}
   firePoint1: {fileID: 3731698400431039696}
   firePoint2: {fileID: 6545185053692320640}
+  gunSound: {fileID: 8300000, guid: 0d3bae9638c99f74182efe4b9916892a, type: 3}
+  volume: 1
