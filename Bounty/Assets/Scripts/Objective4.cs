@@ -11,6 +11,7 @@ public class Objective4 : MonoBehaviour
   [Header("Interaction Settings")]
   float playerInteractionRamge = 4f;
   bool playerInRange = false;
+  [Header("Objective Check Settings")]
   bool objective4Done = false;
 
   void Awake()

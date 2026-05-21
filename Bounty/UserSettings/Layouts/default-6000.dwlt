@@ -248,8 +248,8 @@ MonoBehaviour:
     y: 0
     width: 465
     height: 741
-  m_MinSize: {x: 201, y: 226}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 43
+    y: 0
     width: 2560
     height: 36
   m_SerializedDataModeController:
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 776
+    y: 721
     width: 1659
     height: 570
   m_SerializedDataModeController:
@@ -712,7 +712,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79
+    y: 24
     width: 1659
     height: 671
   m_SerializedDataModeController:
@@ -1335,7 +1335,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.25456607, y: -0.11244214, z: 0.03418728, w: 0.9607419}
     speed: 2
-    m_Value: {x: 0.25440842, y: -0.11090994, z: 0.03377769, w: 0.96012205}
+    m_Value: {x: -0.25456607, y: 0.112442136, z: -0.03418728, w: -0.9607419}
   m_Size:
     m_Target: 2.5446134
     speed: 2
@@ -3065,7 +3065,7 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -59112
+  m_LastSelectedObjectID: 0
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -3087,8 +3087,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1660
-    y: 79
+    x: 1
+    y: 24
     width: 463
     height: 715
   m_SerializedDataModeController:
@@ -3107,10 +3107,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs:
-      - m_Data: 48788
+      m_SelectedIDs: []
       m_LastClickedID:
-        m_Data: 48788
+        m_Data: 0
       m_ExpandedIDs:
       - m_Data: -59100
       - m_Data: -54744
@@ -3121,8 +3120,8 @@ MonoBehaviour:
       - m_Data: 50628
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: SK_Military_Shirt3
-        m_OriginalName: SK_Military_Shirt3
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
@@ -3130,10 +3129,10 @@ MonoBehaviour:
           width: 0
           height: 0
         m_UserData:
-          m_Data: -14634
+          m_Data: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 10}
@@ -3165,8 +3164,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1660
-    y: 820
+    x: 1
+    y: 765
     width: 463
     height: 526
   m_SerializedDataModeController:
@@ -3214,30 +3213,29 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 63420
-    - m_Data: 63422
-    - m_Data: 63424
-    - m_Data: 63426
-    - m_Data: 63428
-    - m_Data: 63432
-    - m_Data: 63434
-    - m_Data: 63438
-    - m_Data: 63440
-    - m_Data: 63442
-    - m_Data: 71430
-    - m_Data: 71432
-    - m_Data: 71436
-    - m_Data: 71444
-    - m_Data: 71446
-    - m_Data: 71506
-    - m_Data: 71508
-    - m_Data: 71510
-    - m_Data: 71512
-    - m_Data: 79284
-    - m_Data: 79296
-    - m_Data: 183538
-    - m_Data: 183620
-    - m_Data: 183628
+    - m_Data: 63978
+    - m_Data: 63980
+    - m_Data: 63982
+    - m_Data: 63984
+    - m_Data: 63986
+    - m_Data: 63988
+    - m_Data: 63990
+    - m_Data: 63992
+    - m_Data: 63994
+    - m_Data: 63996
+    - m_Data: 63998
+    - m_Data: 64000
+    - m_Data: 64002
+    - m_Data: 64004
+    - m_Data: 64006
+    - m_Data: 64008
+    - m_Data: 64010
+    - m_Data: 64012
+    - m_Data: 64014
+    - m_Data: 64016
+    - m_Data: 64018
+    - m_Data: 64020
+    - m_Data: 64022
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3271,29 +3269,29 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 63420
-    - m_Data: 63422
-    - m_Data: 63424
-    - m_Data: 63426
-    - m_Data: 63432
-    - m_Data: 63434
-    - m_Data: 63438
-    - m_Data: 63440
-    - m_Data: 63442
-    - m_Data: 71430
-    - m_Data: 71432
-    - m_Data: 71436
-    - m_Data: 71444
-    - m_Data: 71446
-    - m_Data: 71506
-    - m_Data: 71508
-    - m_Data: 71510
-    - m_Data: 71512
-    - m_Data: 79284
-    - m_Data: 79296
-    - m_Data: 183538
-    - m_Data: 183620
-    - m_Data: 183628
+    - m_Data: 63978
+    - m_Data: 63980
+    - m_Data: 63982
+    - m_Data: 63984
+    - m_Data: 63986
+    - m_Data: 63988
+    - m_Data: 63990
+    - m_Data: 63992
+    - m_Data: 63994
+    - m_Data: 63996
+    - m_Data: 63998
+    - m_Data: 64000
+    - m_Data: 64002
+    - m_Data: 64004
+    - m_Data: 64006
+    - m_Data: 64008
+    - m_Data: 64010
+    - m_Data: 64012
+    - m_Data: 64014
+    - m_Data: 64016
+    - m_Data: 64018
+    - m_Data: 64020
+    - m_Data: 64022
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3375,8 +3373,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 2125
-    y: 79
+    x: 2126
+    y: 24
     width: 434
     height: 1267
   m_SerializedDataModeController:

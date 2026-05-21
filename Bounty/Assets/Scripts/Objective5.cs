@@ -10,6 +10,8 @@ public class Objective5 : MonoBehaviour
     [SerializeField] float openingSpeed = 0.5f;
     [SerializeField] float maxDistance = 3.9f;
     bool canDoorOpen = false;
+    [Header("Objective Check Settings")]
+    bool objective5Done = false;
 
     void Awake()
     {
@@ -38,6 +40,12 @@ public class Objective5 : MonoBehaviour
             finalPos.y = maxDistance;
             bayDoor.transform.position = finalPos;
             canDoorOpen = false;
+            objective5Done = true;
         }
+    }
+
+    public bool GetObjectiveDone()
+    {
+        return objective5Done;
     }
 }
