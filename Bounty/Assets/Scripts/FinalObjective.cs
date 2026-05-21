@@ -3,13 +3,12 @@ using UnityEngine;
 public class FinalObjective : MonoBehaviour
 {
    [Header("Reference Settings")]
-   BoxCollider box;
+   [SerializeField] GameObject finalObjectiveBox;
    QuestManager questManager;
    Objective5 objective5;
 
    void Awake()
     {
-        box = GetComponent<BoxCollider>();
         questManager = FindAnyObjectByType<QuestManager>();
         objective5 = FindAnyObjectByType<Objective5>();
     }
@@ -18,13 +17,13 @@ public class FinalObjective : MonoBehaviour
     {
         if (objective5.GetObjectiveDone())
         {
-            box.gameObject.SetActive(true);
+            finalObjectiveBox.SetActive(true);
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-      PlayerMovement player = other.GetComponent<PlayerMovement>();
+      PlayerMovementController player = other.GetComponent<PlayerMovementController>();
 
       if (player != null)
         {
