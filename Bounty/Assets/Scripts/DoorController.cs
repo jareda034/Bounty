@@ -10,8 +10,11 @@ public class DoorController : MonoBehaviour
     [SerializeField] GameObject door;
     Objective1 objective1;
     PlayerMovementController player;
-    [Header("Settings")]
+    DoorController[] allDoors;
+
+    [Header(" Interaction Settings")]
     [SerializeField] float interactionRange = 3f;
+
     [Header("Security Door Settings")]
     [SerializeField] bool isSecurityDoor = false;
     bool playerinRange = false;
@@ -44,13 +47,16 @@ public class DoorController : MonoBehaviour
 
     void CheckPlayerRange()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) <= interactionRange)
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        if (distance <= interactionRange)
         {
             playerinRange = true;
+            
         }
         else
         {
             playerinRange = false;
+            
         }
     }
 
@@ -58,7 +64,7 @@ public class DoorController : MonoBehaviour
     {
         if (clip != null)
         {
-           AudioSource.PlayClipAtPoint(clip, transform.position, volume); 
+            AudioSource.PlayClipAtPoint(clip, transform.position, volume);
         }
 
     }

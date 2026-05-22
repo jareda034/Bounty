@@ -8,10 +8,12 @@ public class Objective4 : MonoBehaviour
     PlayerMovementController player;
     Objective5 objective5;
     SurvivorController survivorController;
+
     [Header("Interaction Settings")]
     float playerInteractionRamge = 4f;
     bool playerInRange = false;
     [Header("Objective Check Settings")]
+
     bool objective4Done = false;
 
     void Awake()

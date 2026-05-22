@@ -16,9 +16,12 @@ public class KeyPadController : MonoBehaviour
     [Header("Interaction Settings")]
     [SerializeField] float interactionRange;
     bool isPlayerInRange = false;
+
     [Header("UI Settings")]
     bool keyPadUIOpen = false;
     [SerializeField] TMP_Text passwordText;
+    [SerializeField] GameObject interactUI;
+
     [Header("Code Settings")]
     [SerializeField] string passWord = "12234";
     string playerInputs = "";
@@ -49,10 +52,12 @@ public class KeyPadController : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) <= interactionRange)
         {
             isPlayerInRange = true;
+            interactUI.SetActive(true);
         }
         else
         {
             isPlayerInRange = false;
+            interactUI.SetActive(false);
         }
     }
 

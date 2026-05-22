@@ -23,6 +23,8 @@ public class PlayerMovementController : MonoBehaviour
     KeyPadController keyPadController;
     SurvivorController survivorController;
     Objective4 objective4;
+    [Header("UI Settings")]
+    [SerializeField] GameObject interactUI;
 
 
     void Awake()
@@ -117,5 +119,15 @@ public class PlayerMovementController : MonoBehaviour
             survivorController.OpenDialogue();
             objective4.UseComputer();
         }
+    }
+
+    public void InterctUIActive()
+    {
+        interactUI.SetActive(true);
+    }
+
+    public void InterctUIOff()
+    {
+        interactUI.SetActive(false);
     }
 }
