@@ -23,6 +23,8 @@ public class DoorController : MonoBehaviour
     [SerializeField] AudioClip doorOpeningSound;
     [Range(0, 1)][SerializeField] float volume;
 
+
+
     void Awake()
     {
         player = FindFirstObjectByType<PlayerMovementController>();
@@ -51,12 +53,12 @@ public class DoorController : MonoBehaviour
         if (distance <= interactionRange)
         {
             playerinRange = true;
-            
+
         }
         else
         {
             playerinRange = false;
-            
+
         }
     }
 
