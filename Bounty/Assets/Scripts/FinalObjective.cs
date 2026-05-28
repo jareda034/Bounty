@@ -20,19 +20,9 @@ public class FinalObjective : MonoBehaviour
 
     void EnableTrigger()
     {
-        if (objective5.GetObjectiveDone())
+        if (objective5.GetObjectiveDone() && !finalBox.activeSelf)
         {
-          finalBox.SetActive(true);  
-        }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        PlayerMovementController player = other.GetComponent<PlayerMovementController>();
-
-        if (player != null)
-        {
-            Time.timeScale = 0f;
+            finalBox.SetActive(true);
         }
     }
 }

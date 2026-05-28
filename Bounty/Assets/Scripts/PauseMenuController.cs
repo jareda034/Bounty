@@ -28,6 +28,7 @@ public class PauseMenuController : MonoBehaviour
     public void Exit()
     {
        SceneManager.LoadScene("MainMenu");
+       Time.timeScale = 1f;
     }
 
     public bool GetMenuOpen()
