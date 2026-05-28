@@ -23,6 +23,10 @@ public class DoorController : MonoBehaviour
     [SerializeField] AudioClip doorOpeningSound;
     [Range(0, 1)][SerializeField] float volume;
 
+    [Header("Ui Settings")]
+    [SerializeField] GameObject interactUI;
+    DoorController closestDoor;
+
 
 
     void Awake()
