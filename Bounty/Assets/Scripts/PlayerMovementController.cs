@@ -22,6 +22,7 @@ public class PlayerMovementController : MonoBehaviour
     ToggleDeskTop toggleDeskTop;
     KeyPadController keyPadController;
     SurvivorController survivorController;
+    PauseMenuController pauseMenu;
     Objective4 objective4;
     [Header("UI Settings")]
     [SerializeField] GameObject interactUI;
@@ -37,6 +38,7 @@ public class PlayerMovementController : MonoBehaviour
         keyPadController = FindAnyObjectByType<KeyPadController>();
         survivorController = FindAnyObjectByType<SurvivorController>();
         objective4 = FindAnyObjectByType<Objective4>();
+        pauseMenu = FindAnyObjectByType<PauseMenuController>();
         Physics.gravity = gravityScale;
     }
 
@@ -118,6 +120,14 @@ public class PlayerMovementController : MonoBehaviour
             keyPadController.OpenKeyPad();
             survivorController.OpenDialogue();
             objective4.UseComputer();
+        }
+    }
+
+    void OnPause(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            pauseMenu.OpenMenu();
         }
     }
 

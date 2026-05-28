@@ -23,8 +23,6 @@ public class SurvivorController : MonoBehaviour
     bool stopFollowing = false;
     [Header("Objective Check Settings")]
     bool objectiveTalkDone = false;
-    [Header("UI Settings")]
-    [SerializeField] GameObject interactUI;
 
     void Awake()
     {
@@ -46,12 +44,12 @@ public class SurvivorController : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) < interactionRange)
         {
             inDialogueRange = true;
-            interactUI.SetActive(true);
+            
         }
         else
         {
             inDialogueRange = false;
-            interactUI.SetActive(false);
+
         }
     }
 

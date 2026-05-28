@@ -19,11 +19,11 @@ public class EnemyAttack : MonoBehaviour
     {
         anim.SetBool("isLooking", false);
         Rigidbody bulletRb = Instantiate(Bullet, firePoint.position, firePoint.rotation).GetComponent<Rigidbody>();
-        PlayAudio(gunSound,volume);
+        PlayAudio(gunSound, volume);
     }
 
     void PlayAudio(AudioClip clip, float volume)
     {
-        AudioSource.PlayClipAtPoint(clip, transform.position,volume);
+        AudioSource.PlayClipAtPoint(clip, transform.position, volume);
     }
 }

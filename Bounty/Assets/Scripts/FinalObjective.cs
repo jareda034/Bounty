@@ -5,6 +5,7 @@ public class FinalObjective : MonoBehaviour
     [Header("Reference Settings")]
     QuestManager questManager;
     Objective5 objective5;
+    [SerializeField] GameObject finalBox;
 
     void Awake()
     {
@@ -12,11 +13,16 @@ public class FinalObjective : MonoBehaviour
         objective5 = FindAnyObjectByType<Objective5>();
     }
 
+    void Update()
+    {
+        EnableTrigger();
+    }
+
     void EnableTrigger()
     {
         if (objective5.GetObjectiveDone())
         {
-          gameObject.SetActive(true);  
+          finalBox.SetActive(true);  
         }
     }
 
