@@ -9,6 +9,7 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] float playerSpeed = 5.0f;
     [SerializeField] float rotationSpeed = 0.15f;
     Vector3 gravityScale = new Vector3(0, -50.0f, 0);
+    Vector2 inputMovement;
     public bool isMoving;
 
     [Header("Reference Settings")]
@@ -18,14 +19,21 @@ public class PlayerMovementController : MonoBehaviour
     Vector2 mouseLook;
     Animator anim;
     PlayerWeapon weapon;
+    PlayerHealth playerHealth;
     DoorController[] doorControllers;
     ToggleDeskTop toggleDeskTop;
     KeyPadController keyPadController;
+    KeyPadController currentKeyPad;
     SurvivorController survivorController;
+    SurvivorController currentSuvivor;
     PauseMenuController pauseMenu;
     Objective4 objective4;
+    DoorController currentDoor;
+    [SerializeField] GameObject controlComputer;
     [Header("UI Settings")]
     [SerializeField] GameObject interactUI;
+    float interactionRange = 3f;
+    
 
 
     void Awake()
@@ -39,6 +47,7 @@ public class PlayerMovementController : MonoBehaviour
         survivorController = FindAnyObjectByType<SurvivorController>();
         objective4 = FindAnyObjectByType<Objective4>();
         pauseMenu = FindAnyObjectByType<PauseMenuController>();
+        playerHealth = GetComponent<PlayerHealth>();
         Physics.gravity = gravityScale;
     }
 
@@ -47,16 +56,21 @@ public class PlayerMovementController : MonoBehaviour
         MousePosition();
         RotatePlayer();
         CheckMovement();
+        ShowInteractUI();
     }
 
     void OnMove(InputValue value)
     {
-        if (weapon.isReloading || toggleDeskTop.IsUIOpen() || keyPadController.KeyPadOpen() || survivorController.IsDialgueOpen()) { return; }
         playerMovement = value.Get<Vector2>();
     }
 
     void CheckMovement()
     {
+        if (weapon.isReloading || toggleDeskTop.IsUIOpen() || keyPadController.KeyPadOpen() || survivorController.IsDialgueOpen() || !playerHealth.GetPlayerAlive())
+        {
+            playerMovement = Vector3.zero;
+        }
+
         if (playerMovement.magnitude > 0.1f)
         {
             anim.SetBool("isMoving", true);
@@ -131,6 +145,71 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
+    void ShowInteractUI()
+    {
+        if (toggleDeskTop != null)
+        {
+             if (Vector3.Distance(transform.position, toggleDeskTop.transform.position) <= interactionRange)
+            {
+                ClearAllInteractions();
+                InterctUIActive();
+                return;
+            }
+        }
+
+        if (survivorController != null)
+        {
+            if (Vector3.Distance(transform.position, survivorController.transform.position) <= interactionRange)
+            {
+                ClearAllInteractions();
+                currentSuvivor = survivorController;
+                InterctUIActive();
+                return;
+            }
+        }
+        if (keyPadController != null)
+        {
+            if (Vector3.Distance(transform.position, keyPadController.transform.position) <= interactionRange)
+            {
+                ClearAllInteractions();
+                currentKeyPad = keyPadController;
+                InterctUIActive();
+                return;
+            }   
+        }
+        foreach (DoorController door in doorControllers)
+        {
+            if (Vector3.Distance(transform.position, door.transform.position) <= interactionRange)
+            {
+                currentDoor = door;
+                ClearAllInteractions();
+                InterctUIActive();
+                return;
+            }
+        }
+
+        if(controlComputer != null)
+        {
+            if(Vector3.Distance(transform.position,controlComputer.transform.position) <= interactionRange)
+            {
+                ClearAllInteractions();
+                InterctUIActive();
+                return;
+            }
+        }
+
+        currentDoor = null;
+        InterctUIOff();
+
+    }
+
+    void ClearAllInteractions()
+    {
+        currentKeyPad = null;
+        currentDoor = null;
+        currentSuvivor = null;
+    }
+
     public void InterctUIActive()
     {
         interactUI.SetActive(true);
@@ -140,4 +219,6 @@ public class PlayerMovementController : MonoBehaviour
     {
         interactUI.SetActive(false);
     }
+
+
 }

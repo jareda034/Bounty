@@ -51,14 +51,13 @@ public class SurvivorController : MonoBehaviour
         else
         {
             inDialogueRange = false;
-            interactUI.SetActive(false);
         }
     }
 
 
     public void OpenDialogue()
     {
-        if (inDialogueRange)
+        if (inDialogueRange && !objectiveTalkDone)
         {
             survivorDialogue.gameObject.SetActive(true);
             dialogueOpen = true;

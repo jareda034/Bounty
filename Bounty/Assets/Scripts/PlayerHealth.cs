@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour
     [Range(0, 1)][SerializeField] float volume;
     [SerializeField] AudioClip deathSound;
     [Range(0, 1)][SerializeField] float deathVolume;
+    [Header("Death UI")]
+    [SerializeField] GameObject deathUI;
 
     void Awake()
     {
@@ -22,9 +24,11 @@ public class PlayerHealth : MonoBehaviour
     public void DamagePlayer(float damage)
     {
         playerHealth -= damage;
-        PlayAudio(hurtSound,volume);
         anim.SetTrigger("damaged");
-        Debug.Log(playerHealth);
+        if (playerHealth > 2)
+        {
+            PlayAudio(hurtSound, volume);
+        }
         if (playerHealth <= 0)
         {
             PlayAudio(deathSound, deathVolume);
@@ -45,6 +49,13 @@ public class PlayerHealth : MonoBehaviour
         anim.SetTrigger("dead");
         playerAlive = false;
         Destroy(gameObject, 5f);
+        Invoke(nameof(ShowDeathScreen), 4f);
+    }
+
+    void ShowDeathScreen()
+    {
+        Time.timeScale = 0f;
+        deathUI.SetActive(true);
     }
 
     void PlayAudio(AudioClip clip, float volume)

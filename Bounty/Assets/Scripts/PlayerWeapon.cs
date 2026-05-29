@@ -12,6 +12,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] Transform BulletPoint;
     Animator anim;
     PlayerMovementController playerMovement;
+    PlayerHealth playerHealth;
     ToggleDeskTop toggleDeskTop;
     KeyPadController keyPadController;
     SurvivorController survivorController;
@@ -39,6 +40,7 @@ public class PlayerWeapon : MonoBehaviour
         keyPadController = FindAnyObjectByType<KeyPadController>();
         survivorController = FindAnyObjectByType<SurvivorController>();
         pauseMenu = FindAnyObjectByType<PauseMenuController>();
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     void Start()
@@ -76,7 +78,7 @@ public class PlayerWeapon : MonoBehaviour
 
     void CanShoot()
     {
-        if (playerMovement.isMoving || isReloading || !canShoot || toggleDeskTop.IsUIOpen() || keyPadController.KeyPadOpen() || survivorController.IsDialgueOpen() || pauseMenu.GetMenuOpen()) { return; }
+        if (playerMovement.isMoving || isReloading || !canShoot || toggleDeskTop.IsUIOpen() || keyPadController.KeyPadOpen() || survivorController.IsDialgueOpen() || pauseMenu.GetMenuOpen()|| !playerHealth.GetPlayerAlive()) { return; }
         if (isFiring && loadedAmmo > 0)
         {
             HandleShoot();

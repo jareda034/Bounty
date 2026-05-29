@@ -10,7 +10,6 @@ public class DoorController : MonoBehaviour
     [SerializeField] GameObject door;
     Objective1 objective1;
     PlayerMovementController player;
-    DoorController[] allDoors;
 
     [Header(" Interaction Settings")]
     [SerializeField] float interactionRange = 3f;
@@ -22,10 +21,6 @@ public class DoorController : MonoBehaviour
     [Header("Audio Settings")]
     [SerializeField] AudioClip doorOpeningSound;
     [Range(0, 1)][SerializeField] float volume;
-
-    [Header("Ui Settings")]
-    [SerializeField] GameObject interactUI;
-    DoorController closestDoor;
 
 
 
@@ -85,5 +80,10 @@ public class DoorController : MonoBehaviour
                 PlayAudio(doorOpeningSound, volume);
             }
         }
+    }
+
+    public bool GetPlayerInteract()
+    {
+        return playerinRange;
     }
 }

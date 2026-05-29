@@ -14,6 +14,8 @@ public class ToggleDeskTop : MonoBehaviour
     bool isPlayerInRange = false;
     bool isUIOpen = false;
     bool isFileOpen = false;
+    [Header("Ui Settings")]
+    [SerializeField] GameObject interactUI;
 
 
     void Awake()
@@ -31,7 +33,7 @@ public class ToggleDeskTop : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) <= interactionRange)
         {
             isPlayerInRange = true;
-            
+            interactUI.SetActive(true);
         }
         else
         {

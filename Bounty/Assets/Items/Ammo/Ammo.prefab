@@ -10,27 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c9e6e56ebd1fbf64a81d63ffe87f80fb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1591
+      value: 1.8687041
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9e6e56ebd1fbf64a81d63ffe87f80fb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1591
+      value: 1.8687041
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9e6e56ebd1fbf64a81d63ffe87f80fb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1591
+      value: 1.8687041
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9e6e56ebd1fbf64a81d63ffe87f80fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.801
+      value: 24.758099
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9e6e56ebd1fbf64a81d63ffe87f80fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.899
+      value: 0.00755924
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9e6e56ebd1fbf64a81d63ffe87f80fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.996695
+      value: 22.230677
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9e6e56ebd1fbf64a81d63ffe87f80fb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9e6e56ebd1fbf64a81d63ffe87f80fb, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c9e6e56ebd1fbf64a81d63ffe87f80fb, type: 3}
       propertyPath: m_LocalRotation.y
@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c8ebf6caa0350b41a4d2712797ff777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AmmoBoxController
+  spinSpeed: 50
+  pickupParticles: {fileID: 1440993778873109316, guid: f0b72ef64e1cb4f48b3b9c0d53725e60, type: 3}
 --- !u!108 &3886630783315266860
 Light:
   m_ObjectHideFlags: 0
