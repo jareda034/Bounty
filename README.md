@@ -2,7 +2,7 @@
 
 A 3D top-down shooter built in Unity featuring enemy AI, mission objectives, and tactical combat systems.
 
-# Gameplay Overview
+## Gameplay Overview
 
 Players fight through enemy-controlled areas while completing objectives guarded by hostile AI. The game features patrol, chase, detection, and combat behaviors for enemy AI, shooting mechanics, weapon reloading, and mission progression systems.
 
