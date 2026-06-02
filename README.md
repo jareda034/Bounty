@@ -41,12 +41,12 @@ Example:
 
 
 # Screenshots
-## Mission and Onjective UI
-![Mission and Onjective UI](Bounty/Assets/Images/ScreenShots/Screenshot 2026-06-02 160541.png)
+## Mission and Objective UI
+![Mission and Objective UI](Bounty/Assets/Images/ScreenShots/Mission.png)
 ## Game View
-![Game View](Bounty/Assets/Images/ScreenShots/Screenshot 2026-06-02 160705.png)
+![Game View](Bounty/Assets/Images/ScreenShots/Game.png)
 ## Pause UI
-![Pause UI](Bounty/Assets/Images/ScreenShots/Screenshot 2026-06-02 160729.png)
+![Pause UI](Bounty/Assets/Images/ScreenShots/PauseUI.png)
 ![Screenshot2](image-link)
 ![Screenshot2](image-link)
 ![Screenshot2](image-link)
