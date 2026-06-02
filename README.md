@@ -4,7 +4,7 @@ A 3D top-down shooter built in Unity featuring enemy AI, mission objectives, and
 
 # Gameplay Overview
 
-Players fight through enemy-controlled areas while completing objectives guarded by hostile AI. The game features patrol, chase, detection, and comabt behaviors for enemy AI, shooting mechanics, weapon reloading, and mission progression systems.
+Players fight through enemy-controlled areas while completing objectives guarded by hostile AI. The game features patrol, chase, detection, and combat behaviors for enemy AI, shooting mechanics, weapon reloading, and mission progression systems.
 
 # Features
 
@@ -23,7 +23,7 @@ Players fight through enemy-controlled areas while completing objectives guarded
 - State-based enemy AI
 - Modular gameplay systems
 - Event-driven gameplay logic
-- NavMesh System
+- NavMesh pathfinding system
 
 # Technologies Used
 
@@ -58,19 +58,19 @@ Example:
 # What I Learned
 
 This project was focused on improving my understanding of AI behaviour systems and mission-based gameplay. 
-Through development i gained experience with:
+Through development, I gained experience with:
 - Gameplay architecture
 - AI state management
 - Combat systems
 - Event-driven programming
 - Debugging complex gameplay interactions
 - 3D game development workflows
-- Unity's Universal Render Pipleine(URP)
+- Unity's Universal Render Pipeline (URP)
 
 # Challenges Faced
 
 ## Enemy State Management
-- One Of the biggest challenges was creating an AI that could smoothly transition between patrol, chase, and attack states while maintaining reliable navigation and combat behavior.
+- One of the biggest challenges was creating an AI that could smoothly transition between patrol, chase, and attack states while maintaining reliable navigation and combat behaviour.
 ## Reactive AI
 - I implemented a system allowing enemies to react when damaged, immediately switching from their current behavior into an aggressive chase state.
 ## Interaction System
@@ -88,8 +88,8 @@ Through development i gained experience with:
 - Improved animations and visual effects
 - Boss encounters
 - Expanded UI systems
-- Additional weapon Types
-- Gadgets (grenades, mines, etc)
+- Additional weapon types
+- Gadgets (grenades, mines, etc.)
 - Voiced NPCs
 - Story-driven cutscenes
 
@@ -112,7 +112,7 @@ Through development i gained experience with:
 
 # Author
 ## Jared Akigbesote
-portfolio: [https://awesome-code-monolith-lab.base44.app]
-GitHub: [https://github.com/jareda034]
+portfolio: [Portfolio Website](https://awesome-code-monolith-lab.base44.app)
+GitHub: [GitHub Profile](https://github.com/jareda034)
 
 
