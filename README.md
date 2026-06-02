@@ -47,9 +47,12 @@ Example:
 ![Game View](Bounty/Assets/Images/ScreenShots/Game.png)
 ## Pause UI
 ![Pause UI](Bounty/Assets/Images/ScreenShots/PauseUI.png)
-![Screenshot2](image-link)
-![Screenshot2](image-link)
-![Screenshot2](image-link)
+## Death UI
+![Death UI](Bounty/Assets/Images/ScreenShots/DeathUI.png)
+## Interaction UI
+![Interaction UI](Bounty/Assets/Images/ScreenShots/InteractUI.png)
+## DeskTop UI
+![Desktop UI](Bounty/Assets/Images/ScreenShots/DesktopUI.png)
 ![Screenshot2](image-link)
 
 
