@@ -41,17 +41,15 @@ Example:
 
 
 # Screenshots
-
-Add screenshots of:
-- Combat
-- UI
-- Enemy AI
-- Skills/Abilities
-- Missions/Objectives
-
-Example:
-
-![Screenshot1](image-link)
+## Mission and Onjective UI
+![Screenshot1](Screenshot 2026-06-02 160541.png)
+## Game View
+![Screenshot2](Screenshot 2026-06-02 160705.png)
+## Pause UI
+![Screenshot2](Screenshot 2026-06-02 160729.png)
+![Screenshot2](image-link)
+![Screenshot2](image-link)
+![Screenshot2](image-link)
 ![Screenshot2](image-link)
 
 
