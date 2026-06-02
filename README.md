@@ -102,16 +102,15 @@ Through development, I gained experience with:
 | Pause | ESC |
 
 
-## Installation
+## Play the Game
 
-1. Clone the repository
-2. Open the project in Unity
-3. Load the main scene
-4. Press Play
+Cyber Threat is available to play on itch.io:
+
+[Play Cyber Threat](https://ping-wing.itch.io/cyber-threat)
 
 ## Author
-### Jared Akigbesote
-portfolio: [Portfolio Website](https://awesome-code-monolith-lab.base44.app)
-GitHub: [GitHub Profile](https://github.com/jareda034)
+***Jared Akigbesote***
+- portfolio: [Portfolio Website](https://awesome-code-monolith-lab.base44.app)
+- GitHub: [GitHub Profile](https://github.com/jareda034)
 
 
