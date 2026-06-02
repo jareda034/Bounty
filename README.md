@@ -33,11 +33,8 @@ Players fight through enemy-controlled areas while completing objectives guarded
 - Git/GitHub
 
 # Gameplay Video
-
-Add a gameplay clip or GIF here.
-
-Example:
-[Gameplay Video](YOUR_VIDEO_LINK)
+## Enemy Behaviours
+[Gameplay Video](Bounty/Assets/Videos/Combat.mp4)
 
 
 # Screenshots
