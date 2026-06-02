@@ -1,21 +1,21 @@
 # Cyber Threat
 
-A 3D top-down shooter built in Unity featuring enemy AI, mission objectives, and tatical combat systems.
+A 3D top-down shooter built in Unity featuring enemy AI, mission objectives, and tactical combat systems.
 
 # Gameplay Overview
 
-Players fight through enemy-controlled areas while completing objectives guarded by hostile AI. The game features patrol,chase, detection and comabt behaviors for enemy AI, shooting mechanics, weapon reloading, and mission progression systems.
+Players fight through enemy-controlled areas while completing objectives guarded by hostile AI. The game features patrol, chase, detection, and comabt behaviors for enemy AI, shooting mechanics, weapon reloading, and mission progression systems.
 
 # Features
 
 ## Core Systems
-- Enemy AI patrol, dection and chase system
+- Enemy AI patrol, detection and chase system
 - Combat and shooting mechanics
 - Weapon reload system
 - Health and damage system
 - Mission and objective framework
-- Interactive objects and contextual UI promts
-- Hud and gameplay UI sytems
+- Interactive objects and contextual UI prompts
+- HUD and gameplay UI systems
 
 ## Technical Features
 - Built with Unity and C#
@@ -23,6 +23,7 @@ Players fight through enemy-controlled areas while completing objectives guarded
 - State-based enemy AI
 - Modular gameplay systems
 - Event-driven gameplay logic
+- NavMesh System
 
 # Technologies Used
 
@@ -56,8 +57,8 @@ Example:
 
 # What I Learned
 
-This project was focused on improving my understanding of AI behaviour systems and mission based gameplay. 
-Through developement i gained experience with:
+This project was focused on improving my understanding of AI behaviour systems and mission-based gameplay. 
+Through development i gained experience with:
 - Gameplay architecture
 - AI state management
 - Combat systems
@@ -68,8 +69,8 @@ Through developement i gained experience with:
 
 # Challenges Faced
 
-## Enemy State Managment
-- One Oof the biggest challenges was creating an AI that could smoothly transition between patrol, chase, and attack states while maintaining reliable navigation and combat behavior.
+## Enemy State Management
+- One Of the biggest challenges was creating an AI that could smoothly transition between patrol, chase, and attack states while maintaining reliable navigation and combat behavior.
 ## Reactive AI
 - I implemented a system allowing enemies to react when damaged, immediately switching from their current behavior into an aggressive chase state.
 ## Interaction System
@@ -86,9 +87,9 @@ Through developement i gained experience with:
 - Expanded mission variety
 - Improved animations and visual effects
 - Boss encounters
-- Expaneded UI systems
-- Additional Weapon Types
-- Gadgets (grenades,mines,etc)
+- Expanded UI systems
+- Additional weapon Types
+- Gadgets (grenades, mines, etc)
 - Voiced NPCs
 - Story-driven cutscenes
 
@@ -97,7 +98,7 @@ Through developement i gained experience with:
 | Action | Key |
 |---|---|
 | Move | WASD |
-| Shoot | Left Mouse |
+| Shoot | Left Mouse Button|
 | Interact | E |
 | Pause | ESC |
 
