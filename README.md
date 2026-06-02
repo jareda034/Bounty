@@ -1,27 +1,27 @@
 # Cyber Threat
 
-A 3D top-down shooter built in Unity featuring enemy AI, mission objectives, and combat systems.
+A 3D top-down shooter built in Unity featuring enemy AI, mission objectives, and tatical combat systems.
 
 # Gameplay Overview
 
-Players fight through enemy-controlled areas while completing objectives guarded by AI enemies. The game features patrol/chase behaviors for enemy AI, shooting mechanics, a weapon reload system, and mission progression systems.
+Players fight through enemy-controlled areas while completing objectives guarded by hostile AI. The game features patrol,chase, detection and comabt behaviors for enemy AI, shooting mechanics, weapon reloading, and mission progression systems.
 
 # Features
 
 ## Core Systems
-- Enemy AI patrol/chase system
+- Enemy AI patrol, dection and chase system
 - Combat and shooting mechanics
-- weapon reload system
+- Weapon reload system
 - Health and damage system
 - Mission and objective framework
-- UI/HUD systems
+- Interactive objects and contextual UI promts
+- Hud and gameplay UI sytems
 
 ## Technical Features
 - Built with Unity and C#
 - Object-oriented architecture
 - State-based enemy AI
 - Modular gameplay systems
-- ScriptableObjects
 - Event-driven gameplay logic
 
 # Technologies Used
@@ -56,33 +56,41 @@ Example:
 
 # What I Learned
 
-In this Project i wanted to focus on building better enemy AI and a mission/objective sysyem. This project improved my understanding of:
+This project was focused on improving my understanding of AI behaviour systems and mission based gameplay. 
+Through developement i gained experience with:
 - Gameplay architecture
 - AI state management
 - Combat systems
+- Event-driven programming
 - Debugging complex gameplay interactions
-- 3D game development processes
+- 3D game development workflows
+- Unity's Universal Render Pipleine(URP)
 
 # Challenges Faced
 
-- One major challenge was creating enemy AI that could smoothly transition between patrol, chase, and attack states without breaking pathfinding or combat behavior.
-- Making the enemy respond to player attacks changing its state to chase when damaged.
-- making interaction UI pop-up for my interactable objects.
-- Ensuring the camera feel and view works well for the gameplay i built.
-- learning how to convert textures and matrials to work with URP.
+## Enemy State Managment
+- One Oof the biggest challenges was creating an AI that could smoothly transition between patrol, chase, and attack states while maintaining reliable navigation and combat behavior.
+## Reactive AI
+- I implemented a system allowing enemies to react when damaged, immediately switching from their current behavior into an aggressive chase state.
+## Interaction System
+- Developing contextual interaction prompts for objectives and interactable objects required careful management of code and UI updates.
+## Camera Design
+- Finding a camera angle and movement system that provided clear visibility while maintaining engaging gameplay required extensive testing and iteration.
+## URP Migration
+- Converting materials and textures to work correctly with Unity's Universal Render Pipeline helped improve my understanding of rendering pipelines and project optimisation.
 
 # Future Improvements
 
-- Save/load system
-- More enemy types
+- Save and load system
+- Additional enemy archetypes
 - Expanded mission variety
-- Better animations and VFX
-- Boss fights
-- Expaneded UI
-- More Weapon Types
-- Gadgets Ex: grenades
-- Voiced Npcs
-- Cutscenes
+- Improved animations and visual effects
+- Boss encounters
+- Expaneded UI systems
+- Additional Weapon Types
+- Gadgets (grenades,mines,etc)
+- Voiced NPCs
+- Story-driven cutscenes
 
 # Controls
 
@@ -93,7 +101,6 @@ In this Project i wanted to focus on building better enemy AI and a mission/obje
 | Interact | E |
 | Pause | ESC |
 
----
 
 # Installation
 
@@ -102,5 +109,9 @@ In this Project i wanted to focus on building better enemy AI and a mission/obje
 3. Load the main scene
 4. Press Play
 
-```bash
-git clone YOUR_REPOSITORY_LINK
+# Author
+## Jared Akigbesote
+portfolio: [https://awesome-code-monolith-lab.base44.app]
+GitHub: [https://github.com/jareda034]
+
+
