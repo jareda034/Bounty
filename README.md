@@ -6,9 +6,9 @@ A 3D top-down shooter built in Unity featuring enemy AI, mission objectives, and
 
 Players fight through enemy-controlled areas while completing objectives guarded by hostile AI. The game features patrol, chase, detection, and combat behaviors for enemy AI, shooting mechanics, weapon reloading, and mission progression systems.
 
-# Features
+## Features
 
-## Core Systems
+### Core Systems
 - Enemy AI patrol, detection and chase system
 - Combat and shooting mechanics
 - Weapon reload system
@@ -17,7 +17,7 @@ Players fight through enemy-controlled areas while completing objectives guarded
 - Interactive objects and contextual UI prompts
 - HUD and gameplay UI systems
 
-## Technical Features
+### Technical Features
 - Built with Unity and C#
 - Object-oriented architecture
 - State-based enemy AI
@@ -25,36 +25,36 @@ Players fight through enemy-controlled areas while completing objectives guarded
 - Event-driven gameplay logic
 - NavMesh pathfinding system
 
-# Technologies Used
+## Technologies Used
 
 - Unity
 - C#
 - Visual Studio
 - Git/GitHub
 
-# Gameplay Video
-## Enemy Behaviours
+## Gameplay Videos
+### Enemy Behaviours
 [Enemy Behaviour](https://youtu.be/LR2QYrz0JVA)
-## Combat and reloading
-[Comabt & Reloading](https://youtu.be/QS4_MXb0eK4)
+### Combat and reloading
+[Combat & Reloading](https://youtu.be/QS4_MXb0eK4)
 
 
 
-# Screenshots
-## Mission and Objective UI
+## Screenshots
+### Mission and Objective UI
 ![Mission and Objective UI](Bounty/Assets/Images/ScreenShots/Mission.png)
-## Game View
+### Game View
 ![Game View](Bounty/Assets/Images/ScreenShots/Game.png)
-## Pause UI
+### Pause UI
 ![Pause UI](Bounty/Assets/Images/ScreenShots/PauseUI.png)
-## Death UI
+### Death UI
 ![Death UI](Bounty/Assets/Images/ScreenShots/DeathUI.png)
-## Interaction UI
+### Interaction UI
 ![Interaction UI](Bounty/Assets/Images/ScreenShots/InteractUI.png)
-## DeskTop UI
+### DeskTop UI
 ![Desktop UI](Bounty/Assets/Images/ScreenShots/DesktopUI.png)
 
-# What I Learned
+## What I Learned
 
 This project was focused on improving my understanding of AI behaviour systems and mission-based gameplay. 
 Through development, I gained experience with:
@@ -66,20 +66,20 @@ Through development, I gained experience with:
 - 3D game development workflows
 - Unity's Universal Render Pipeline (URP)
 
-# Challenges Faced
+## Challenges Faced
 
-## Enemy State Management
+### Enemy State Management
 - One of the biggest challenges was creating an AI that could smoothly transition between patrol, chase, and attack states while maintaining reliable navigation and combat behaviour.
-## Reactive AI
+### Reactive AI
 - I implemented a system allowing enemies to react when damaged, immediately switching from their current behaviour into an aggressive chase state.
-## Interaction System
+### Interaction System
 - Developing contextual interaction prompts for objectives and interactable objects required careful management of code and UI updates.
-## Camera Design
+### Camera Design
 - Finding a camera angle and movement system that provided clear visibility while maintaining engaging gameplay required extensive testing and iteration.
-## URP Migration
+### URP Migration
 - Converting materials and textures to work correctly with Unity's Universal Render Pipeline helped improve my understanding of rendering pipelines and project optimisation.
 
-# Future Improvements
+## Future Improvements
 
 - Save and load system
 - Additional enemy archetypes
@@ -92,7 +92,7 @@ Through development, I gained experience with:
 - Voiced NPCs
 - Story-driven cutscenes
 
-# Controls
+## Controls
 
 | Action | Key |
 |---|---|
@@ -102,15 +102,15 @@ Through development, I gained experience with:
 | Pause | ESC |
 
 
-# Installation
+## Installation
 
 1. Clone the repository
 2. Open the project in Unity
 3. Load the main scene
 4. Press Play
 
-# Author
-## Jared Akigbesote
+## Author
+### Jared Akigbesote
 portfolio: [Portfolio Website](https://awesome-code-monolith-lab.base44.app)
 GitHub: [GitHub Profile](https://github.com/jareda034)
 
