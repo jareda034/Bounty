@@ -34,7 +34,10 @@ Players fight through enemy-controlled areas while completing objectives guarded
 
 # Gameplay Video
 ## Enemy Behaviours
-[Gameplay Video](Bounty/Assets/Videos/Combat.mp4)
+[Enemy Behaviour](https://youtu.be/LR2QYrz0JVA)
+## Combat and reloading
+[Comabt & Reloading](https://youtu.be/QS4_MXb0eK4)
+
 
 
 # Screenshots
@@ -50,8 +53,6 @@ Players fight through enemy-controlled areas while completing objectives guarded
 ![Interaction UI](Bounty/Assets/Images/ScreenShots/InteractUI.png)
 ## DeskTop UI
 ![Desktop UI](Bounty/Assets/Images/ScreenShots/DesktopUI.png)
-![Screenshot2](image-link)
-
 
 # What I Learned
 
