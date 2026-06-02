@@ -72,7 +72,7 @@ Through development, I gained experience with:
 ## Enemy State Management
 - One of the biggest challenges was creating an AI that could smoothly transition between patrol, chase, and attack states while maintaining reliable navigation and combat behaviour.
 ## Reactive AI
-- I implemented a system allowing enemies to react when damaged, immediately switching from their current behavior into an aggressive chase state.
+- I implemented a system allowing enemies to react when damaged, immediately switching from their current behaviour into an aggressive chase state.
 ## Interaction System
 - Developing contextual interaction prompts for objectives and interactable objects required careful management of code and UI updates.
 ## Camera Design
