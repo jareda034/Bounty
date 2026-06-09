@@ -109,7 +109,7 @@ public class PlayerMovementController : MonoBehaviour
 
         if (aimDirection != Vector3.zero)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         }
 
         Vector3 movement = new Vector3(playerMovement.x * playerSpeed, rb.linearVelocity.y, playerMovement.y * playerSpeed);

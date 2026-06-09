@@ -28,8 +28,7 @@ public class KeyPadController : MonoBehaviour
     [SerializeField] AudioClip doorOpeningSound;
     [Range(0, 1)][SerializeField] float volume;
 
-    [Header("Ui Settings")]
-    [SerializeField] GameObject interactUI;
+ 
 
     void Awake()
     {
@@ -52,7 +51,6 @@ public class KeyPadController : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) <= interactionRange)
         {
             isPlayerInRange = true;
-            interactUI.SetActive(true);
         }
         else
         {
