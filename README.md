@@ -110,7 +110,7 @@ Cyber Threat is available to play on itch.io:
 
 ## Author
 ***Jared Akigbesote***
-- portfolio: [Portfolio Website](https://awesome-code-monolith-lab.base44.app)
+- portfolio: [Portfolio Website](https://jareda034.github.io/Portfolio/)
 - GitHub: [GitHub Profile](https://github.com/jareda034)
 
 
